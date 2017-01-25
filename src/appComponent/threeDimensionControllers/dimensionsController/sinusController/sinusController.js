@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
 
-import DimensionControllerElement from './dimensionControllerElement.js';
+import SinusControllerElement from './sinusControllerElement.js';
 
 /**
  * present list of products
@@ -27,10 +27,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	}
 };
 
-const DimensionController = connect(
+const SinusController = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(DimensionControllerElement);
+)(SinusControllerElement);
 
 
-export default DimensionController
+export default SinusController

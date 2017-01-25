@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
 
 import { changeProperty, addDimension} from './dimensionsActionCreator.js';
-import DimensionsControllerElement from './dimensionsControllerPresentation.js';
+import DimensionControllerElement from './dimensionsControllerPresentation.js';
 
 /**
  * present list of products
@@ -11,7 +11,8 @@ import DimensionsControllerElement from './dimensionsControllerPresentation.js';
  */
 const mapStateToProps = (state, ownProps) => {
 	return {
-		list: state.dimensionsReducer
+		list: state.dimensionsReducer[ownProps.label],
+		label:ownProps.label
 	}
 };
 
@@ -24,18 +25,18 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		onChange: (e) => {
 			let {name,value}=e.target;
-			dispatch(changeProperty(index,name,value));
+			dispatch(changeProperty(index,name,value,ownProps.label));
 		},
 		onAddDimension: () => {
-			dispatch(addDimension());
+			dispatch(addDimension(ownProps.label));
 		}
 	}
 };
 
-const DimensionsController = connect(
+const DimensionController = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(DimensionsControllerElement);
+)(DimensionControllerElement);
 
 
-export default DimensionsController
+export default DimensionController

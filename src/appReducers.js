@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import dimensionsReducer from './dimensionsController/dimensionsReducer.js'
+import dimensionsReducer from './appComponent/threeDimensionControllers/dimensionsController/dimensionsReducer.js'
 
 const appReducers = combineReducers({
 	dimensionsReducer

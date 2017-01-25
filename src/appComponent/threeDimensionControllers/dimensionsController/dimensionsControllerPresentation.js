@@ -1,6 +1,6 @@
 import { h } from 'preact';
-import DimensionController from './dimensionController/dimensionController.js'
-const DimensionsControllerElement = ({onAddDimension, onChange, list}) => (
+import SinusController from './sinusController/sinusController.js'
+const DimensionControllerElement = ({onAddDimension, onChange, list, label}) => (
 	/**
 	 * present all dimension controllers
 	 * @param {array} list dimensions list
@@ -9,11 +9,12 @@ const DimensionsControllerElement = ({onAddDimension, onChange, list}) => (
 	 * @return {object} presentation element
 	 */
 	<div>
-		<button onClick={ onAddDimension }>Add New Dimension</button>
+		<b>{label} Dimension</b>
+		<button onClick={ onAddDimension }>+</button>
 		<ul>
 			{list.map((dimension ,index)=>
 				<li key={index}>
-					<DimensionController
+					<SinusController
 						{...dimension}
 						onChange={(name,value) => onChange(index,name,value)}/>
 				</li>
@@ -22,4 +23,4 @@ const DimensionsControllerElement = ({onAddDimension, onChange, list}) => (
 	</div>
 );
 
-export default DimensionsControllerElement;
+export default DimensionControllerElement;
