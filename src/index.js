@@ -5,7 +5,7 @@ import { Provider } from 'preact-redux';
 import appReducers from './appReducers.js';
 
 
-import ThreeDimensionController from './appComponent/threeDimensionControllers/threeDimensionController.js';
+import AppComponent from './appComponent/appComponent.js';
 import './style';
 
 let store = createStore(
@@ -16,7 +16,7 @@ let store = createStore(
 render((
 	<div id="outer">
 		<Provider store={store}>
-			<ThreeDimensionController/>
+			<AppComponent/>
 		</Provider>
 	</div>
 ), document.body);
