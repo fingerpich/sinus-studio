@@ -1,3 +1,5 @@
+[![esdoc](https://doc.esdoc.org/github.com/fingerpich/indulgeInnerChild/badge.svg)](https://doc.esdoc.org/github.com/fingerpich/indulgeInnerChild/)
+
 # Indulge your child
 control drawing spirographs in a web application
 
