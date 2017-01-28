@@ -2,9 +2,10 @@
  * Created by mojtaba on 1/27/2017.
  */
 import { h } from 'preact';
-import {Scene} from './scene/scene.js';
 
-const SceneContainer = (
+import Scene from './scene/scene.js';
+
+const SceneContainer = () => (
 	/**
 	 * scene container
 	 * @return {object} presentation element

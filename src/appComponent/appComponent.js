@@ -6,7 +6,7 @@ import { h } from 'preact';
 import ThreeDimensionController from './threeDimensionControllers/threeDimensionController.js';
 import SceneContainer from './sceneContainer/sceneContainer.js';
 
-const AppComponent = (
+const AppComponent = () => (
 	/**
 	 * show all element
 	 * @return {object} presentation element

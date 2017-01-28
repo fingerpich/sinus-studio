@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+// import * as THREE from 'three/build/three.modules';
 
 class Scene extends Component {
 	shouldComponentUpdate() {
