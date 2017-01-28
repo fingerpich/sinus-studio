@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-// import * as THREE from 'three/build/three.modules';
+import * as THREE from 'three';
 
 class Scene extends Component {
 	shouldComponentUpdate() {
@@ -50,7 +50,7 @@ class Scene extends Component {
 		var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 		var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 		this.cube = new THREE.Mesh( geometry, material );
-		this.scene.add( cube );
+		this.scene.add( this.cube );
 		this.camera.position.z = 5;
 	}
 	rerender() {
@@ -58,7 +58,8 @@ class Scene extends Component {
 	}
 
 	renderObject() {
-		requestAnimationFrame( this.renderObject );
+		const thisComponent=this;
+		// requestAnimationFrame( thisComponent.renderObject );
 
 		this.cube.rotation.x += 0.1;
 		this.cube.rotation.y += 0.1;
