@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import SinusController from './sinusController/sinusController.js'
-const DimensionControllerElement = ({onAddDimension, onChange, list, label}) => (
+const DimensionControllerElement = ({onAddDimension, onChange, onRemove, list, label}) => (
 	/**
 	 * present all dimension controllers
 	 * @param {array} list dimensions list
@@ -16,7 +16,9 @@ const DimensionControllerElement = ({onAddDimension, onChange, list, label}) => 
 				<li key={index}>
 					<SinusController
 						{...dimension}
-						onChange={({name,value}) => onChange({name,value,index})}/>
+						onChange={({name,value}) => onChange({name,value,index})}
+						onRemove={() => onRemove({index})}
+					/>
 				</li>
 			)}
 		</ul>

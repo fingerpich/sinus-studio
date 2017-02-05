@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
 
-import { changeProperty, addDimension} from './dimensionsActionCreator.js';
+import { removeDimension, changeProperty, addDimension} from './dimensionsActionCreator.js';
 import DimensionControllerElement from './dimensionsControllerPresentation.js';
 
 /**
@@ -23,6 +23,9 @@ const mapStateToProps = (state, ownProps) => {
  */
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
+		onRemove: ({index}) => {
+			dispatch(removeDimension({index,label:ownProps.label}));
+		},
 		onChange: ({name,value,index}) => {
 			dispatch(changeProperty({index,name,value,label:ownProps.label}));
 		},

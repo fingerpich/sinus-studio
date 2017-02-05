@@ -28,9 +28,9 @@ function fetchDimension(dimensionState, action){
 function addDimension(dimensionState, action){
 	const newdimensionState = {...dimensionState};
 	newdimensionState[action.data.dimension].push({
-		width: 5,
+		width: 1,
 		step: 1,
-		start: 0,
+		start: 90,
 	});
 
 	return newdimensionState;
@@ -56,7 +56,7 @@ function editDimension(dimensionState, action){
  */
 function removeDimension(dimensionState, action){
 	const newdimensionState={...dimensionState};//clone dimension
-	newdimensionState[action.dimension].splice(action.index, 1);//remove matched product
+	newdimensionState[action.data.dimension].splice(action.data.index, 1);//remove matched product
 
 	return newdimensionState;
 }

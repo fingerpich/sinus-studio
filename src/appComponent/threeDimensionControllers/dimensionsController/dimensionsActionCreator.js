@@ -9,3 +9,7 @@ export const addDimension=(label)=>{
 export const changeProperty=({index,name,value,label})=>{
 	return {type:'EDIT_DIMENSION',data:{index,name,value,dimension:label}}
 };
+
+export const removeDimension=({index,label})=>{
+	return {type:'REMOVE_DIMENSION',data:{index,dimension:label}}
+};
