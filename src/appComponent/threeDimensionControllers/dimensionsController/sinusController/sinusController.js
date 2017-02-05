@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		onChange: (e) => {
 			let {name,value}=e.target;
-			dispatch(changeProperty(name,value));
+			ownProps.onChange({name,value});
 		}
 	}
 };

@@ -16,7 +16,7 @@ const DimensionControllerElement = ({onAddDimension, onChange, list, label}) => 
 				<li key={index}>
 					<SinusController
 						{...dimension}
-						onChange={(name,value) => onChange(index,name,value)}/>
+						onChange={({name,value}) => onChange({name,value,index})}/>
 				</li>
 			)}
 		</ul>

@@ -20,13 +20,18 @@ class Scene extends Component {
 	}
 
 	componentDidMount() {
+		const {store} = this.context;
+		this.unsubscribe = store.subscribe(()=>{
+			this.renderObject();
+			this.rerender();
+		});
 		setTimeout( () => this.setup(), 1);
 	}
 
 	setup() {
 		let { width, height } = this.base.getBoundingClientRect();
 		this.renderer = new THREE.WebGLRenderer();
-		this.renderer.setSize(width*2, height*2);
+		this.renderer.setSize(width, height);
 		this.base.appendChild(this.renderer.domElement);
 
 		this.scene = new THREE.Scene();
@@ -37,7 +42,7 @@ class Scene extends Component {
 			0.1,        // Near
 			10000       // Far
 		);
-		this.camera.position.set(-15, 10, 15);
+		this.camera.position.set(-10, 10, 15);
 		this.camera.lookAt(this.scene.position);
 
 		this.makeObject();
@@ -51,14 +56,13 @@ class Scene extends Component {
 		var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 		this.cube = new THREE.Mesh( geometry, material );
 		this.scene.add( this.cube );
-		this.camera.position.z = 5;
+		this.camera.position.z = 10;
 	}
 	rerender() {
 		this.renderer.render(this.scene, this.camera);
 	}
 
 	renderObject() {
-		const thisComponent=this;
 		// requestAnimationFrame( thisComponent.renderObject );
 
 		this.cube.rotation.x += 0.1;

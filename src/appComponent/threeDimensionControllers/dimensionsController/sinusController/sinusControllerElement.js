@@ -9,9 +9,9 @@ import { h } from 'preact';
  */
 const SinusControllerElement = ({onChange, width=5, step=1, start=0}) => (
 	<div class="dimensionInputs">
-		<input name="width" onInput={onChange} value={width} />
-		<input name="step" onInput={onChange} value={step} />
-		<input name="start" onInput={onChange} value={start} />
+		<input type="number" name="width" onInput={onChange} value={width} />
+		<input type="number" name="step" onInput={onChange} value={step} />
+		<input type="number" name="start" onInput={onChange} value={start} />
 	</div>
 );
 

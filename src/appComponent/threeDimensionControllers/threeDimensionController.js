@@ -8,7 +8,7 @@ const ThreeDimensionController = ({onAddDimension, onChange, list}) => (
 	 * @param {function} onChange event callback
 	 * @return {object} presentation element
 	 */
-	<div>
+	<div class="controlChanges">
 		<DimensionsController label="x"/>
 		<DimensionsController label="y"/>
 		<DimensionsController label="z"/>

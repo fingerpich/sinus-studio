@@ -23,9 +23,8 @@ const mapStateToProps = (state, ownProps) => {
  */
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
-		onChange: (e) => {
-			let {name,value}=e.target;
-			dispatch(changeProperty(index,name,value,ownProps.label));
+		onChange: ({name,value,index}) => {
+			dispatch(changeProperty({index,name,value,label:ownProps.label}));
 		},
 		onAddDimension: () => {
 			dispatch(addDimension(ownProps.label));
