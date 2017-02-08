@@ -35,7 +35,16 @@ class Scene extends Component {
 			this.rerender();
 		});
 
-		setTimeout( () => this.setup(), 1);
+		setTimeout( () => {
+			this.setup();
+
+			const state=store.getState();
+			if(state) {
+				this.renderObject(state);
+				this.rerender();
+			}
+		}, 1);
+
 	}
 
 	/**
