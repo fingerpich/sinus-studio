@@ -3,6 +3,17 @@
  * @return {object} saved state
  */
 export const loadState = () => {
+	const url = window.location.search;
+	if(url.length>10) {
+		try {
+			const url = window.location.search;
+			const urlstring = decodeURIComponent(url.slice(6)).replace(/\;/g,':');
+			return JSON.parse(urlstring);
+		} catch (e) {
+			//redirect to 404
+		}
+	}
+
 	try{
 		const serializedState=localStorage.getItem("state");
 		if(serializedState === null){
@@ -12,6 +23,11 @@ export const loadState = () => {
 	}catch(err){
 		return undefined;
 	}
+};
+
+export const setUrlByState = () => {
+	var state=window.getStoreState();
+	window.location.search="?data="+encodeURIComponent(JSON.stringify(state));
 };
 
 /**

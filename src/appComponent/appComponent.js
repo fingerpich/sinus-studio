@@ -3,7 +3,7 @@
  */
 import { h } from 'preact';
 
-import ThreeDimensionController from './threeDimensionControllers/threeDimensionController.js';
+import ControlsSection from './controlSection/controlSection.js';
 import SceneContainer from './sceneContainer/sceneContainer.js';
 /**
  * show all element
@@ -12,7 +12,7 @@ import SceneContainer from './sceneContainer/sceneContainer.js';
 const AppComponent = () => (
 	<div>
 		<SceneContainer/>
-		<ThreeDimensionController/>
+		<ControlsSection/>
 	</div>
 );
 

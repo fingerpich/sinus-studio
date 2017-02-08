@@ -18,6 +18,10 @@ store.subscribe(function(){
 	saveState(store.getState());
 });
 
+window.getStoreState=() => {
+	return store.getState();
+}
+
 
 render((
 	<div id="outer">
