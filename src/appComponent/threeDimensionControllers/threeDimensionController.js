@@ -1,5 +1,7 @@
 import { h } from 'preact';
 import DimensionsController from './dimensionsController/dimensionsController.js'
+import './controlsStyle.less';
+
 const ThreeDimensionController = ({onAddDimension, onChange, list}) => (
 	/**
 	 * present all dimension controllers

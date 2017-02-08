@@ -1,6 +1,7 @@
 import { h, Component } from 'preact';
 import * as THREE from 'three';
-
+import * as threeOrbitControlsLib from 'three-orbit-controls'
+const threeOrbitControls= threeOrbitControlsLib.default(THREE);
 /**
  * @extends {Component}
  * illustrate data
@@ -57,6 +58,13 @@ class Scene extends Component {
 		this.camera.position.set(0, 0, 0);
 		this.camera.position.z = 20;
 		this.camera.lookAt(this.scene.position);
+		const controls = new threeOrbitControls(this.camera,document.getElementsByClassName("scene")[0]);
+		const originUpdate=controls.update;
+		const thisComponent=this;
+		controls.update=function(){
+			originUpdate();
+			thisComponent.rerender();
+		};
 
 		this.renderObject();
 		this.renderLighting();

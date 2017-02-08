@@ -66,10 +66,11 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "three": "^0.84.0",
     "preact": "^4.8.0",
     "preact-redux": "^1.0.1",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "three": "^0.84.0",
+    "three-orbit-controls": "^82.1.0"
   },
   "homepage": "https://github.com/fingerpich/indulgeInnerChild#readme"
 }
