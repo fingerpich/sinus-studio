@@ -35,6 +35,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	}
 };
 
+/**
+ * connect DimensionControllerElement to redux store with above methods
+ * @type {object}
+ */
 const DimensionController = connect(
 	mapStateToProps,
 	mapDispatchToProps

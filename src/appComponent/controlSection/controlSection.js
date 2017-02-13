@@ -3,10 +3,10 @@ import ThreeDimensionController from './threeDimensionControllers/threeDimension
 import {setUrlByState} from '../../persistState.js';
 import './controlSection.less';
 
+/**
+ * present control section
+ */
 const ControlsSection = () => (
-	/**
-	 * present control section
-	 */
 	<div class="controlSection">
 		<ThreeDimensionController/>
 

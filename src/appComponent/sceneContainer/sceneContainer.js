@@ -5,11 +5,11 @@ import { h } from 'preact';
 
 import Scene from './scene/scene.js';
 
+/**
+ * scene container
+ * @return {object} presentation element
+ */
 const SceneContainer = () => (
-	/**
-	 * scene container
-	 * @return {object} presentation element
-	 */
 	<div>
 		<Scene {...{zoom:1, rotateX:0, rotateY:0}} />
 	</div>

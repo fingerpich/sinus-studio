@@ -1,14 +1,12 @@
 [![esdoc](https://doc.esdoc.org/github.com/fingerpich/indulgeInnerChild/badge.svg)](https://doc.esdoc.org/github.com/fingerpich/indulgeInnerChild/)
 
 # Indulge your child
-control drawing spirographs in a web application
+Control a 3d spirograph in a web application
 
 # Code 
-a web application using Preact, Redux , three.js so it is lightweight
-bundle process using core-js so js files could use ES7 features
-generate css using less, autoprefixer, extract-text-webpack-plugin so css file generated in seperate file
-
----
+This web application use Preact, Redux , three.js which make it lightweight and powerful and clean code.
+and by using core-js we are able to use ES7 features
+and also we are using less, autoprefixer, extract-text-webpack-plugin to generate css and make it in a separated file.
 
 
 ## Installation
@@ -36,8 +34,9 @@ npm install
 **3. Start a live-reload development server:**
 
 ```sh
-PORT=8080 npm run dev
+npm run dev
 ```
+> open localhost:8080 in your browser
 
 > This is a full web server nicely suited to your project. Any time you make changes within the `src` directory, it will rebuild and even refresh your browser.
 
@@ -53,3 +52,10 @@ You can now deploy the contents of the `build` directory to production!
 > **Example:** deploy to [surge.sh](https://surge.sh):
 >
 > `npm i surge && surge build -d my-app.surge.sh`
+
+##Generate Help
+to generate documentation after installing npm requirements run
+```sh
+esdoc
+```
+and  then you could  see documentation in doc/index.js

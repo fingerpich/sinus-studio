@@ -1,13 +1,11 @@
 import { h } from 'preact';
 import SinusController from './sinusController/sinusController.js'
+
+/**
+ * present all dimension controllers
+ * @return {object} presentation element
+ */
 const DimensionControllerElement = ({onAddDimension, onChange, onRemove, list, label}) => (
-	/**
-	 * present all dimension controllers
-	 * @param {array} list dimensions list
-	 * @param {function} onAddDimension on add new dimension
-	 * @param {function} onChange event callback
-	 * @return {object} presentation element
-	 */
 	<div>
 		<b>{label} Dimension</b>
 		<button onClick={ onAddDimension }>+</button>

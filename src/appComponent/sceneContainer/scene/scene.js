@@ -93,12 +93,12 @@ class Scene extends Component {
 	 * @param time changes in a range
 	 */
 	calcDimension(dimensionData,time) {
-		let value = 0;
+		let value = 1;
 		for (let di of dimensionData) {
 			const width=parseInt(di.width);
 			const start=parseInt(di.start);
 			const step=parseInt(di.step);
-			value += Math.sin((start + time * step) / 180 * Math.PI) * width;
+			value *= Math.sin((start + time * step) / 180 * Math.PI) * width;
 		}
 		return value;
 	}

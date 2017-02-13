@@ -1,6 +1,5 @@
 import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
-
 import SinusControllerElement from './sinusControllerElement.js';
 
 /**
@@ -27,6 +26,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 	}
 };
 
+/**
+ * connect SinusControllerElement to redux store with above methods
+ * @type {object}
+ */
 const SinusController = connect(
 	mapStateToProps,
 	mapDispatchToProps

@@ -1,7 +1,7 @@
 {
   "name": "indulge-inner-child",
   "version": "1.0.0",
-  "description": "draw interesting things using math and three.js",
+  "description": "Control a 3d spirograph in a web application",
   "main": "webpack-dev-server --inline --devtool source-map --content-base src/client --port 3000",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
