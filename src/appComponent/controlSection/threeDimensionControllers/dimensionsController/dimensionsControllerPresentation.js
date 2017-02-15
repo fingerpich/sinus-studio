@@ -6,7 +6,7 @@ import SinusController from './sinusController/sinusController.js'
  * @return {object} presentation element
  */
 const DimensionControllerElement = ({onAddDimension, onChange, onRemove, list, label}) => (
-	<div>
+	<div class="dimensionController">
 		<b>{label} Dimension</b>
 		<button onClick={ onAddDimension }>+</button>
 		<ul>

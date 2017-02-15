@@ -10,7 +10,7 @@ import SceneContainer from './sceneContainer/sceneContainer.js';
  * @return {object} presentation element
  */
 const AppComponent = () => (
-	<div>
+	<div class="appComponent">
 		<SceneContainer/>
 		<ControlsSection/>
 	</div>

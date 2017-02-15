@@ -1,19 +1,29 @@
 .controlSection{
-  width:20%;
-  position:fixed;
-  height: 100%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  .controlChanges{
+	flex-grow: 1;
+	.dimensionController{
+	  text-align: center;
+	}
+  }
 
   .shareButton{
 	padding: 10px;
-	position: absolute;
-	width: 80%;
-	margin: 10px 10%;
-	bottom:0;
-	display: block;
-	background: #222222;
-	color: white;
-	border: 1px solid #565656;
+	margin: 5px auto;
+	flex-grow: 0;
+	width: 94%;
+	/* position: absolute; */
+	/* width: 80%; */
+	/* margin: 10px 10%; */
+	/* bottom: 0; */
+	/* display: block; */
+	background: none;
+	color: #00c2ff;
+	border: 1px solid rgba(0, 194, 255, 0.23);
 	font-weight: bold;
-	font-size: 1rem;
+	border-radius: 3px;
+	/* font-size: 1rem; */
   }
 }

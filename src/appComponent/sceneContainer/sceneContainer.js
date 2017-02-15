@@ -10,7 +10,7 @@ import Scene from './scene/scene.js';
  * @return {object} presentation element
  */
 const SceneContainer = () => (
-	<div>
+	<div class="sceneContainer">
 		<Scene {...{zoom:1, rotateX:0, rotateY:0}} />
 	</div>
 );

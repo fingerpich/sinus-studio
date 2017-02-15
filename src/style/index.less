@@ -2,10 +2,27 @@ body {
   margin: 0;
   background: #252525;
 }
-
-div.scene {
-  width: 80%;
-  left:20%;
-  height: 100%;
+div.appComponent{
+  display:flex;
+  flex-direction: row;
   position: fixed;
+  width:100%;
+  height:100%;
+  div.sceneContainer {
+	flex-grow:2;
+	flex-shrink: 2;
+	.scene{
+	  width:100%;
+	  height:100%;
+	}
+  }
+  .controlSection {
+	flex-shrink: 0;
+	flex-grow:0;
+  }
+}
+@media only screen and (max-device-width: 480px) {
+  div.appComponent {
+	flex-direction: column;
+  }
 }
