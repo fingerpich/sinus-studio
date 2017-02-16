@@ -24,7 +24,7 @@ window.getStoreState=() => {
 
 
 render((
-	<div id="outer">
+	<div class="outer">
 		<Provider store={store}>
 			<AppComponent/>
 		</Provider>

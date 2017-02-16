@@ -7,7 +7,7 @@ import SinusController from './sinusController/sinusController.js'
  */
 const DimensionControllerElement = ({onAddDimension, onChange, onRemove, list, label}) => (
 	<div class="dimensionController">
-		<b>{label} Dimension</b>
+		<b>{label.toUpperCase()} Dimension</b>
 		<button onClick={ onAddDimension }>+</button>
 		<ul>
 			{list.map((dimension ,index)=>

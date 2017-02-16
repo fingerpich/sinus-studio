@@ -61,7 +61,10 @@ module.exports = {
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(ENV)
 		}),
-		new HtmlWebpackPlugin({title:'Indulge Your Child'})
+		new HtmlWebpackPlugin({
+			title:'Indulge Your Child',
+			template: 'ejs!src/index.template.ejs'
+		})
 	]).concat(ENV === 'production' ? [
 		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.OccurenceOrderPlugin()

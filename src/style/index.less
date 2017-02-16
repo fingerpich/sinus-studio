@@ -2,10 +2,13 @@ body {
   margin: 0;
   background: #252525;
 }
+html, body, .outer{
+  height:100%;
+}
 div.appComponent{
   display:flex;
   flex-direction: row;
-  position: fixed;
+  //position: fixed;
   width:100%;
   height:100%;
   div.sceneContainer {
@@ -14,6 +17,8 @@ div.appComponent{
 	.scene{
 	  width:100%;
 	  height:100%;
+	  text-align: center;
+	  background: #222222;
 	}
   }
   .controlSection {
@@ -24,5 +29,6 @@ div.appComponent{
 @media only screen and (max-device-width: 480px) {
   div.appComponent {
 	flex-direction: column;
+	overflow: auto;
   }
 }
