@@ -10,6 +10,7 @@
     "build": "cross-env NODE_ENV=production webpack -p --progress",
     "prebuild": "mkdirp build",
     "testlint": "eslint src tests/**/*.js",
+    "deploy": "./deploy.sh",
     "test": "mocha --compilers js:babel-register --recursive ./**/*.desc.js"
   },
   "repository": {
