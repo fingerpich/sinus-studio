@@ -52,8 +52,10 @@ class Scene extends Component {
 	 */
 	setup() {
 		let { width, height } = this.base.getBoundingClientRect();
+		const MIN_SIZE=300;
+		const MARGIN_IN_SMALL_SIZE=10/100;
 		this.renderer = new THREE.WebGLRenderer();
-		const minWH=Math.min(Math.max(width,300),Math.max(height,300));
+		const minWH=Math.min(Math.max(width,Math.min(MIN_SIZE,window.innerWidth-window.innerWidth*MARGIN_IN_SMALL_SIZE)),Math.max(height,Math.min(MIN_SIZE,window.innerHeight-window.innerHeight*MARGIN_IN_SMALL_SIZE)));
 		this.renderer.setSize(minWH, minWH);
 		this.base.appendChild(this.renderer.domElement);
 
