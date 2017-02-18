@@ -22,6 +22,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 		},
 		onRemove: () => {
 			ownProps.onRemove();
+		},
+		onSwitchPlay: () => {
+			ownProps.onChange({name:'isPlaying',value:!ownProps.isPlaying});
 		}
 	}
 };

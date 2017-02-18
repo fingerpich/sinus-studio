@@ -81,6 +81,8 @@ class Scene extends Component {
 		this.renderObject();
 		this.renderLighting();
 		this.rerender();
+
+		// requestAnimationFrame( thisComponent.renderObject );
 	}
 
 	/**
@@ -142,7 +144,6 @@ class Scene extends Component {
 			this.scene.add(this.spline);
 			this.rerender();
 		}
-		// requestAnimationFrame( thisComponent.renderObject );
 	}
 
 	/**

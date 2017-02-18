@@ -35,6 +35,7 @@ function addDimension(dimensionState, action){
 		width: 1,
 		step: 1,
 		start: 90,
+		isPLaying: false,
 	});
 
 	return newdimensionState;
