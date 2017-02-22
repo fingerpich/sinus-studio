@@ -31,18 +31,14 @@ class Scene extends Component {
 	componentDidMount() {
 		const {store} = this.context;
 		this.unsubscribe = store.subscribe(()=>{
-			this.renderObject(store.getState());
-			this.rerender();
+			this.newState=store.getState();
 		});
 
 		setTimeout( () => {
 			this.setup();
 
-			const state=store.getState();
-			if(state) {
-				this.renderObject(state);
-				this.rerender();
-			}
+			//to render for first time
+			this.newState=store.getState();
 		}, 1);
 
 	}
@@ -52,10 +48,14 @@ class Scene extends Component {
 	 */
 	setup() {
 		let { width, height } = this.base.getBoundingClientRect();
+
 		const MIN_SIZE=300;
 		const MARGIN_IN_SMALL_SIZE=10/100;
+		const innerWidth=window.innerWidth-window.innerWidth*MARGIN_IN_SMALL_SIZE;
+		const innerHeight=window.innerHeight-window.innerHeight*MARGIN_IN_SMALL_SIZE;
+		const minWH=Math.min(Math.max(width,Math.min(MIN_SIZE,innerWidth)),Math.max(height,Math.min(MIN_SIZE,innerHeight)));
+
 		this.renderer = new THREE.WebGLRenderer();
-		const minWH=Math.min(Math.max(width,Math.min(MIN_SIZE,window.innerWidth-window.innerWidth*MARGIN_IN_SMALL_SIZE)),Math.max(height,Math.min(MIN_SIZE,window.innerHeight-window.innerHeight*MARGIN_IN_SMALL_SIZE)));
 		this.renderer.setSize(minWH, minWH);
 		this.base.appendChild(this.renderer.domElement);
 
@@ -73,16 +73,20 @@ class Scene extends Component {
 		const controls = new threeOrbitControls(this.camera,document.getElementsByClassName("scene")[0]);
 		const originUpdate=controls.update;
 		const thisComponent=this;
-		controls.update=function(){
+		controls.update=function(){//when camera state changes
 			originUpdate();
 			thisComponent.rerender();
 		};
 
-		this.renderObject();
 		this.renderLighting();
-		this.rerender();
+		this.renderObject();
 
-		// requestAnimationFrame( thisComponent.renderObject );
+		requestAnimationFrame(() => {
+			if(this.newState && !this.newState.renderedBefore){
+				this.renderObject(this.newState);
+				this.newState.renderedBefore=false;
+			}
+		});
 	}
 
 	/**

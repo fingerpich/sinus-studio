@@ -25,6 +25,17 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 		},
 		onSwitchPlay: () => {
 			ownProps.onChange({name:'isPlaying',value:!ownProps.isPlaying});
+			if(!ownProps.isPlaying){
+				ownProps.start+=1;
+				ownProps.onChange({name:"start",value:ownProps.start});
+				if(this.playInterval)clearInterval(this.playInterval);
+				this.playInterval=setInterval(function(){
+
+				},10);
+			}
+			else{
+				if(this.playInterval)clearInterval(this.playInterval);
+			}
 		}
 	}
 };
