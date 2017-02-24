@@ -62,8 +62,7 @@ module.exports = {
 			'process.env.NODE_ENV': JSON.stringify(ENV)
 		}),
 		new HtmlWebpackPlugin({
-			title:'Indulge Your Child',
-			template: 'ejs!src/index.template.ejs'
+			template: 'src/index.template.html'
 		})
 	]).concat(ENV === 'production' ? [
 		new webpack.optimize.DedupePlugin(),
