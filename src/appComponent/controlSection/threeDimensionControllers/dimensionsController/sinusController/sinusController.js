@@ -7,6 +7,11 @@ import SinusControllerElement from './sinusControllerElement.js';
  * @param {object} ownProps associated property in parent component
  */
 const mapStateToProps = (state, ownProps) => {
+	if(ownProps.isPlaying){
+		setTimeout(()=>{
+			ownProps.onChange({name:"start",value:parseInt(ownProps.start)+1});
+		},10);
+	}
 	return {...state.dimension};
 };
 
@@ -14,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
  * @param {object} dispatch to run a reducer
  * @param {object} ownProps associated property in parent component
  */
+// const thisComponent={};
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		onChange: (e) => {
@@ -25,17 +31,17 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 		},
 		onSwitchPlay: () => {
 			ownProps.onChange({name:'isPlaying',value:!ownProps.isPlaying});
-			if(!ownProps.isPlaying){
-				ownProps.start+=1;
-				ownProps.onChange({name:"start",value:ownProps.start});
-				if(this.playInterval)clearInterval(this.playInterval);
-				this.playInterval=setInterval(function(){
-
-				},10);
-			}
-			else{
-				if(this.playInterval)clearInterval(this.playInterval);
-			}
+			// if(!ownProps.isPlaying){
+			// 	ownProps.onChange({name:"start",value:parseInt(ownProps.start)+1});
+			// 	if(thisComponent.playingInterval)clearInterval(thisComponent.playingInterval);
+            //
+			// 	thisComponent.playingInterval=setInterval(function(){
+			// 		ownProps.onChange({name:"start",value:parseInt(ownProps.start)+1});
+			// 	},10);
+			// }
+			// else{
+			// 	if(thisComponent.playingInterval)clearInterval(thisComponent.playingInterval);
+			// }
 		}
 	}
 };
