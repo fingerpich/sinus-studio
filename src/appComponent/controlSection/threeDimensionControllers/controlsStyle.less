@@ -1,23 +1,26 @@
-
 .controlChanges{
-  //color:#fff;
-  color: #d2d2d2;
-  text-shadow: 0 0 20px #8a8a8a;
-  font-size: 15px;
   padding: 0.5rem;
-  b{
-
+  .dimensionController{
+	max-width: 210px;
+	margin: 25px auto;
+	b{
+	  color: #afafaf;
+	  /* text-shadow: 0 0 20px #8a8a8a; */
+	  font-size: 0.75rem;
+	}
   }
+
   button{
 	background: none;
-	border: 1px solid #565656;
+	border: 1px solid #252525;
 	border-radius: 3px;
 	color: #ececec;
 	margin: 0 5px;
 	width: 20px;
 	height: 20px;
 	padding: 0;
-	line-height: 15px;
+	line-height: 1rem;
+	outline:none;
 	/* box-shadow: 0 0 5px 0 #444; */
   }
   ul {
@@ -28,13 +31,17 @@
 	  list-style: none;
 	}
   }
-  input{
-	height: 1.5rem;
-	width: 3.5rem;
+}
+.inputLabels{
+  width: 70%;
+  margin: auto;
+  small{
+	width: 50%;
 	text-align: center;
-	margin: 1px;
-	background: none;
-	border: 1px solid #7d7d7d;
-	color: silver;
+	display: block;
+	float: right;
+	color: #444444;
+	text-shadow: none;
+	margin: 4px 0px -2px;
   }
 }

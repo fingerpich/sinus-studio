@@ -9,6 +9,11 @@ const DimensionControllerElement = ({onAddDimension, onChange, onRemove, list, l
 	<div class="dimensionController">
 		<b>{label.toUpperCase()} Dimension</b>
 		<button onClick={ onAddDimension }>+</button>
+		{list.length?(
+		<div class="inputLabels">
+			<small>start</small>
+			<small>frequency</small>
+		</div>):''}
 		<ul>
 			{list.map((dimension ,index)=>
 				<li key={index}>
