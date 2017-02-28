@@ -14,7 +14,7 @@ const calcDimension=(dimensionData,time) => {
 		value *= Math.sin((start + time * step) / 180 * Math.PI) * width;
 	}
 	return value;
-}
+};
 /**
  * rebuild object
  * @param dimensionsData it's instance of store
@@ -42,7 +42,7 @@ const MakeSpline = (dimensionsData) => {
 	const material = new THREE.LineBasicMaterial({
 		color: 0xffffff,
 		opacity: 1,
-		linewidth: 3,
+		linewidth: 2,
 		vertexColors: THREE.VertexColors
 	});
 	const line = new THREE.Line(spline, material);
@@ -52,6 +52,6 @@ const MakeSpline = (dimensionsData) => {
 	line.position.z = 0;
 
 	return line;
-}
+};
 
 export default MakeSpline;

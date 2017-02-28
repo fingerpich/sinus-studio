@@ -10,24 +10,9 @@ class RenderControllerClass {
 
 		this.scene = new THREE.Scene();
 
-		this.camera = new THREE.PerspectiveCamera(
-			35,         // FOV
-			800 / 640,  // Aspect
-			0.1,        // Near
-			10000       // Far
-		);
-		this.camera.position.set(0, 0, 0);
-		this.camera.position.z = 20;
-		this.camera.lookAt(this.scene.position);
-		const controls = new threeOrbitControls(this.camera,cameraControlAreaElement);
-		const originUpdate=controls.update;
-		const thisComponent=this;
-		controls.update=function(){//when camera state changes
-			originUpdate();
-			thisComponent.onCameraChange();
-		};
-
+		this.addCamera(cameraControlAreaElement);
 		this.addLights();
+		this.buildAxes(1000);
 
 		this.repeatRendering();
 
@@ -46,6 +31,59 @@ class RenderControllerClass {
 		this.scene.add(light);
 
 		this.renderer.setClearColor(0x222222, 1);
+	}
+
+	/**
+	 * add 3 Axis
+	 */
+	buildAxes(length) {
+		// const axes = new THREE.AxisHelper( length );
+		// this.scene.add( axes );
+		const axes = new THREE.Object3D();
+		const color=0x2c2c2c;
+		axes.add( this.buildAxis( new THREE.Vector3( -length, 0, 0 ), new THREE.Vector3( length, 0, 0 ), color, true ) ); // +X
+		axes.add( this.buildAxis( new THREE.Vector3( 0, -length, 0 ), new THREE.Vector3( 0, length, 0 ), color, true ) ); // +Y
+		axes.add( this.buildAxis( new THREE.Vector3( 0, 0, -length ), new THREE.Vector3( 0, 0, length ), color, true ) ); // +Z
+
+		this.scene.add(axes);
+	}
+	buildAxis( src, dst, colorHex, dashed ) {
+		var geom = new THREE.Geometry(),
+			mat;
+
+		if(dashed) {
+			mat = new THREE.LineDashedMaterial({ linewidth: 1, color: colorHex, dashSize: 1, gapSize: 1 });
+		} else {
+			mat = new THREE.LineBasicMaterial({ linewidth: 1, color: colorHex });
+		}
+
+		geom.vertices.push( src.clone() );
+		geom.vertices.push( dst.clone() );
+		geom.computeLineDistances(); // This one is SUPER important, otherwise dashed lines will appear as simple plain lines
+
+		return new THREE.Line( geom, mat, THREE.LinePieces );
+	}
+
+	/**
+	 * add camera
+     */
+	addCamera(cameraControlAreaElement) {
+		this.camera =new THREE.PerspectiveCamera(
+			35,         // FOV
+			800 / 640,  // Aspect
+			0.1,        // Near
+			10000       // Far
+		);
+		this.camera.position.set(0, 0, 0);
+		this.camera.position.z = 20;
+		this.camera.lookAt(this.scene.position);
+		const controls = new threeOrbitControls(this.camera,cameraControlAreaElement);
+		const originUpdate=controls.update;
+		const thisComponent=this;
+		controls.update=function(){//when camera state changes
+			originUpdate();
+			thisComponent.onCameraChange();
+		};
 	}
 
 	/**
