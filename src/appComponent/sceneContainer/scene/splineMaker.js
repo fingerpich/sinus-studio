@@ -19,14 +19,15 @@ const calcDimension=(dimensionData,time) => {
  * rebuild object
  * @param dimensionsData it's instance of store
  */
-const MakeSpline = (dimensionsData) => {
-
+const MakeSpline = (data) => {
+	const {dimensionsReducer,optionsReducer}=data;
+	const dimensionsData=dimensionsReducer;
 	const spline = new THREE.Geometry();
 
 	const pointsColor = [];
 	for (let i = 0; i <= 360; i++) {
 		pointsColor[i] = new THREE.Color(0xffffff);
-		// pointsColor[ i ].setHSL( i / 360, 1.0, 0.5 );
+		if(optionsReducer.hasHSL)pointsColor[ i ].setHSL( i / 360, 1.0, 0.5 );
 	}
 
 	for (let time = 0; time <= 360; time++) {

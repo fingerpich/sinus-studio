@@ -1,7 +1,5 @@
 /**
  * reducer changes store by action
- * @example
- * let myClass = new MyClass();
  */
 export default (dimensionState = {x:[], y:[], z:[]}, action) => {
 	switch (action.type) {

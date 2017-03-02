@@ -1,19 +1,40 @@
-import { h } from 'preact';
-import ThreeDimensionController from './threeDimensionControllers/threeDimensionController.js';
-import {setUrlByState} from '../../persistState.js';
-import './controlSection.less';
+import { h, Component } from 'preact';
+import { connect } from 'preact-redux';
+import ControlsSectionElement from './controlSectionElement'
 
 /**
- * present control section
+ * get options from global state
+ * @param {object} state global state which contains all state we created
+ * @param {object} ownProps associated property in parent component
  */
-const ControlsSection = () => (
-	<div class="controlSection">
-		<ThreeDimensionController/>
+const mapStateToProps = (state, ownProps) => {
+	return {
+		options: state.optionsReducer,
+	}
+};
 
-		<button style="" onClick={ (e) => {
-			setUrlByState();
-		}} class="shareButton">Update link to share</button>
-	</div>
-);
+/**
+ * set callbacks to element
+ * @param {object} dispatch to run a reducer
+ * @param {object} ownProps associated property in parent component
+ */
+const mapDispatchToProps = (dispatch, ownProps) => {
+	return {
+		onOptionChange: (name,value) => {
+			dispatch({type:'CHANGE_OPTIONS',data:{name,value}});
+		},
+	}
+};
 
-export default ControlsSection;
+/**
+ * connect DimensionControllerElement to redux store with above methods
+ * @type {object}
+ */
+const ControlsSectionContainer = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(ControlsSectionElement);
+
+
+export default ControlsSectionContainer
+

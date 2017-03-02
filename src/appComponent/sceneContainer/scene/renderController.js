@@ -40,6 +40,7 @@ class RenderControllerClass {
 		// const axes = new THREE.AxisHelper( length );
 		// this.scene.add( axes );
 		const axes = new THREE.Object3D();
+		this.axes=axes;
 		const color=0x2c2c2c;
 		axes.add( this.buildAxis( new THREE.Vector3( -length, 0, 0 ), new THREE.Vector3( length, 0, 0 ), color, true ) ); // +X
 		axes.add( this.buildAxis( new THREE.Vector3( 0, -length, 0 ), new THREE.Vector3( 0, length, 0 ), color, true ) ); // +Y
@@ -103,9 +104,9 @@ class RenderControllerClass {
 
 	rebuildSpline(data) {
 		if (data) {
-			const {dimensionsReducer}=data;
+			this.axes.visible=data.optionsReducer.showAxes;
 			if (this.spline) this.scene.remove(this.spline);
-			this.spline = MakeSpline(dimensionsReducer);
+			this.spline = MakeSpline(data);
 			this.scene.add(this.spline);
 		}
 	}
