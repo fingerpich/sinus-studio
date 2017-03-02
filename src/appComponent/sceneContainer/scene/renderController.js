@@ -3,7 +3,17 @@ import * as threeOrbitControlsLib from 'three-orbit-controls'
 const threeOrbitControls= threeOrbitControlsLib.default(THREE);
 import MakeSpline from "./splineMaker";
 
+/**
+ * Render Controller
+ */
 class RenderControllerClass {
+
+	/**
+	 * initialize using three js
+	 * @param {object} cameraControlAreaElement its the element which camera could control in it
+	 * @param {number} width canvas width
+	 * @param {number} height canvas height
+	 */
 	setup(cameraControlAreaElement,width,height){
 		this.renderer = new THREE.WebGLRenderer();
 		this.renderer.setSize(width,height);
@@ -35,6 +45,7 @@ class RenderControllerClass {
 
 	/**
 	 * add 3 Axis
+	 * @param length determine 3 axis length
 	 */
 	buildAxes(length) {
 		// const axes = new THREE.AxisHelper( length );
@@ -67,6 +78,7 @@ class RenderControllerClass {
 
 	/**
 	 * add camera
+	 * @param {object} cameraControlAreaElement its the element which camera could control in it
      */
 	addCamera(cameraControlAreaElement) {
 		this.camera =new THREE.PerspectiveCamera(
@@ -94,14 +106,23 @@ class RenderControllerClass {
 		this.renderer.render(this.scene, this.camera);
 	}
 
+	/**
+	 * it will call back on camera changes
+	 */
 	onCameraChange() {
 		if (this.curState) this.curState.cameraChanged = true;
 		return true;
 	}
+	/**
+	 * it will call back on control changes
+	 */
 	onStateChange(newState) {
 		this.curState = newState;
 	}
 
+	/**
+	 * rebuild spline
+	 */
 	rebuildSpline(data) {
 		if (data) {
 			this.axes.visible=data.optionsReducer.showAxes;
@@ -111,6 +132,9 @@ class RenderControllerClass {
 		}
 	}
 
+	/**
+	 * control the rendering
+	 */
 	repeatRendering() {
 		if (this.curState) {
 			if (!this.curState.hasRendered) {

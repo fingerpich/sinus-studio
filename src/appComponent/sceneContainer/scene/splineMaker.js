@@ -4,6 +4,7 @@ import * as THREE from 'three';
  * it's the way it calculate the points position
  * @param dimensionData data of a dimension
  * @param time changes in a range
+ * @return {number} result
  */
 const calcDimension=(dimensionData,time) => {
 	let value = 1;
@@ -17,7 +18,8 @@ const calcDimension=(dimensionData,time) => {
 };
 /**
  * rebuild object
- * @param dimensionsData it's instance of store
+ * @param data it's instance of store
+ * @return {object} created spline
  */
 const MakeSpline = (data) => {
 	const {dimensionsReducer,optionsReducer}=data;

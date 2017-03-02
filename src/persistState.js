@@ -24,7 +24,9 @@ export const loadState = () => {
 		return undefined;
 	}
 };
-
+/**
+ * change browser url to new state and reload it
+ */
 export const setUrlByState = () => {
 	var state=window.getStoreState();
 	window.location.search="?data="+encodeURIComponent(JSON.stringify(state));

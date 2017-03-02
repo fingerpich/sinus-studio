@@ -15,6 +15,7 @@ export const changeProperty=({index,name,value,label})=>{
 };
 
 /**
+ * remove a dimension
  * @return {object} remove dimension action
  * @param {number} index
  */
