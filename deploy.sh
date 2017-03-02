@@ -1,11 +1,14 @@
 #!/bin/bash
 
 set -o errexit # Exit on error
-
+DEST="./fingerpich.github.io/spiro3d/"
 npm run build
 git clone https://github.com/fingerpich/fingerpich.github.io.git
-cp ./build/index.html ./fingerpich.github.io/
-cp ./build/style.css ./fingerpich.github.io/
-cp ./build/bundle.js ./fingerpich.github.io/
-(cd ./fingerpich.github.io/ && git commit -a -m "deploy on io" && git push origin master)
+cp ./build/index.html $DEST
+cp ./build/style.css $DEST
+cp ./build/bundle.js $DEST
+cp ./build/spiro3D_SW.js $DEST
+cp -R "./build/icons" $DEST
+cp ./src/manifest.webmanifest $DEST
+(cd $DEST && git add . && git commit -a -m "deploy Spiro3D on io" && git push origin master)
 rm -rf ./fingerpich.github.io

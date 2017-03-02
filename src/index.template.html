@@ -3,7 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Indulge Your Child</title>
+	<title>Spiro3D</title>
+	<link rel="manifest" href="manifest.webmanifest">
+	<script>
+		(function() {
+			if('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/spiro3D_SW.js');
+			}
+		})();
+	</script>
 </head>
 <body>
 </body>

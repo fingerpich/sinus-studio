@@ -2,9 +2,9 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
-
+import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 const ENV = process.env.NODE_ENV || 'development';
-
 module.exports = {
 	entry: './src/index.js',
 
@@ -65,8 +65,45 @@ module.exports = {
 			template: 'src/index.template.html'
 		})
 	]).concat(ENV === 'production' ? [
+		new FaviconsWebpackPlugin({
+			logo: './src/assets/spiro-logo.png',
+			prefix: 'icons/',
+			// Generate a cache file with control hashes and
+			// don't rebuild the favicons until those hashes change
+			persistentCache: true,
+			// Inject the html into the html-webpack-plugin
+			inject: true,
+			// favicon background color (see https://github.com/haydenbleasel/favicons#usage)
+			background: '#fff',
+			// favicon app title (see https://github.com/haydenbleasel/favicons#usage)
+			title: 'Spiro3D',
+			icons: {
+				android: true,
+				appleIcon: true,
+				appleStartup: true,
+				coast: true,
+				favicons: true,
+				firefox: true,
+				opengraph: false,
+				twitter: false,
+				yandex: false,
+				windows: true
+			}
+		}),
 		new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.OccurenceOrderPlugin()
+		new webpack.optimize.OccurenceOrderPlugin(),
+		new SWPrecacheWebpackPlugin(
+			{
+				cacheId: 'Spiro3D',
+				filename: 'spiro3D_SW.js',
+				maximumFileSizeToCacheInBytes: 4194304,
+				minify: true,
+				runtimeCaching: [{
+					handler: 'cacheFirst',
+					urlPattern: /[.]mp3$/,
+				}],
+			}
+		),
 	] : []),
 
 	stats: { colors: true },
