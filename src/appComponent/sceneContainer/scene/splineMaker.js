@@ -12,7 +12,7 @@ const calcDimension=(dimensionData,time) => {
 		const width=parseInt(di.width);
 		const start=parseInt(di.start);
 		const step=parseInt(di.step);
-		value *= Math.sin((start + time * step) / 180 * Math.PI) * width;
+		value += Math.sin((start + time * step) / 180 * Math.PI) * width;
 	}
 	return value;
 };

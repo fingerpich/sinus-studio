@@ -13,6 +13,7 @@ const DimensionControllerElement = ({onAddDimension, onChange, onRemove, list, l
 		<div class="inputLabels">
 			<small>start</small>
 			<small>frequency</small>
+			<small>width</small>
 		</div>):''}
 		<ul>
 			{list.map((dimension ,index)=>
