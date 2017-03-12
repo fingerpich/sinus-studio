@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux'
-import dimensionsReducer from './appComponent/controlSection/threeDimensionControllers/dimensionsController/dimensionsReducer.js'
+import rotorsReducer from './appComponent/controlSection/rotorsContainer/rotors2D/rotorsReducer.js'
 import optionsReducer from './appComponent/controlSection/optionReducer'
 
 /**
  * combine all reducers so you can use them where ever we want
  */
 const appReducers = combineReducers({
-	dimensionsReducer,
-	optionsReducer
+	rotorsData:rotorsReducer,
+	options:optionsReducer
 });
 
 export default appReducers

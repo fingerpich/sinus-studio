@@ -9,7 +9,7 @@ import ControlsSectionElement from './controlSectionElement'
  */
 const mapStateToProps = (state, ownProps) => {
 	return {
-		options: state.optionsReducer,
+		options: state.options,
 	}
 };
 

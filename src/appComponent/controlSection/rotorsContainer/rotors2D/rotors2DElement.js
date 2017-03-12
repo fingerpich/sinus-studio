@@ -1,24 +1,24 @@
 import { h } from 'preact';
-import SinusController from './sinusController/sinusController.js'
+import Rotor from './rotor/rotor.js'
 
 /**
  * present all dimension controllers
  * @return {object} presentation element
  */
-const DimensionControllerElement = ({onAddDimension, onChange, onRemove, list, label}) => (
+const Rotor2dControllerElement = ({onAddDimension, onChange, onRemove, rotor2DData, rotorLabel}) => (
 	<div class="dimensionController">
-		<b>{label.toUpperCase()} Dimension</b>
+		<b>{rotorLabel} Rotor</b>
 		<button onClick={ onAddDimension }>+</button>
-		{list.length?(
+		{rotor2DData.length?(
 		<div class="inputLabels">
 			<small>start</small>
 			<small>frequency</small>
 			<small>width</small>
 		</div>):''}
 		<ul>
-			{list.map((dimension ,index)=>
+			{rotor2DData.map((dimension ,index)=>
 				<li key={index}>
-					<SinusController
+					<Rotor
 						{...dimension}
 						onChange={({name,value}) => onChange({name,value,index})}
 						onRemove={() => onRemove({index})}
@@ -29,4 +29,4 @@ const DimensionControllerElement = ({onAddDimension, onChange, onRemove, list, l
 	</div>
 );
 
-export default DimensionControllerElement;
+export default Rotor2dControllerElement;

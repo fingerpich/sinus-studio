@@ -7,12 +7,13 @@ import * as THREE from 'three';
  * @return {number} result
  */
 const calcDimension=(dimensionData,time) => {
-	let value = 1;
+	let value = [0,0];
 	for (let di of dimensionData) {
 		const width=parseInt(di.width);
 		const start=parseInt(di.start);
 		const step=parseInt(di.step);
-		value += Math.sin((start + time * step) / 180 * Math.PI) * width;
+		value[0] += Math.cos((start + time * step) / 180 * Math.PI) * width;
+		value[1] += Math.sin((start + time * step) / 180 * Math.PI) * width;
 	}
 	return value;
 };
@@ -22,20 +23,25 @@ const calcDimension=(dimensionData,time) => {
  * @return {object} created spline
  */
 const MakeSpline = (data) => {
-	const {dimensionsReducer,optionsReducer}=data;
-	const dimensionsData=dimensionsReducer;
+	const {rotorsData,options}=data;
 	const spline = new THREE.Geometry();
 
 	const pointsColor = [];
 	for (let i = 0; i <= 360; i++) {
 		pointsColor[i] = new THREE.Color(0xffffff);
-		if(optionsReducer.hasHSL)pointsColor[ i ].setHSL( i / 360, 1.0, 0.5 );
+		if(options.hasHSL)pointsColor[ i ].setHSL( i / 360, 1.0, 0.5 );
 	}
 
 	for (let time = 0; time <= 360; time++) {
-		const x = calcDimension(dimensionsData.x, time);
-		const y = calcDimension(dimensionsData.y, time);
-		const z = calcDimension(dimensionsData.z, time);
+		const xy=calcDimension(rotorsData.xy, time);
+		let x = xy[0];
+		let y = xy[1];
+		const xz=calcDimension(rotorsData.xz, time);
+		x += xz[1];
+		let z = xz[0];
+		const yz = calcDimension(rotorsData.yz, time);
+		y += yz[0];
+		z += yz[1];
 		const point = new THREE.Vector3(x, y, z);
 		spline.vertices.push(point);
 	}

@@ -125,7 +125,7 @@ class RenderControllerClass {
 	 */
 	rebuildSpline(data) {
 		if (data) {
-			this.axes.visible=data.optionsReducer.showAxes;
+			this.axes.visible=data.options.showAxes;
 			if (this.spline) this.scene.remove(this.spline);
 			this.spline = MakeSpline(data);
 			this.scene.add(this.spline);

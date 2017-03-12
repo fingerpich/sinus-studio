@@ -1,14 +1,18 @@
+const checkState = (state) => {
+	return (state && state.rotorsData && state.rotorsData.xy);
+};
 /**
  * load last State
  * @return {object} saved state
  */
 export const loadState = () => {
 	const url = window.location.search;
+	let result=0;
 	if(url.length>10) {
 		try {
 			const url = window.location.search;
 			const urlstring = decodeURIComponent(url.slice(6)).replace(/\;/g,':');
-			return JSON.parse(urlstring);
+			result = JSON.parse(urlstring);
 		} catch (e) {
 			//redirect to 404
 		}
@@ -17,12 +21,13 @@ export const loadState = () => {
 	try{
 		const serializedState=localStorage.getItem("state");
 		if(serializedState === null){
-			return undefined;
+			result = undefined;
 		}
-		return JSON.parse(serializedState);
+		result = JSON.parse(serializedState);
 	}catch(err){
-		return undefined;
+		result = undefined;
 	}
+	return checkState(result)?result:undefined;
 };
 /**
  * change browser url to new state and reload it

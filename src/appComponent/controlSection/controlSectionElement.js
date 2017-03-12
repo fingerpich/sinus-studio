@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import ThreeDimensionController from './threeDimensionControllers/threeDimensionController.js';
+import RotorsContainer from './rotorsContainer/rotorsContainer.js';
 import {setUrlByState} from '../../persistState.js';
 import './controlSection.less';
 
@@ -16,7 +16,7 @@ const ControlsSectionElement = ({options,onOptionChange}) => (
 				onOptionChange("hasHSL", e.target.checked)}}/>
 		</div>
 
-		<ThreeDimensionController/>
+		<RotorsContainer/>
 
 		<button style="" onClick={ (e) => {
 			setUrlByState();

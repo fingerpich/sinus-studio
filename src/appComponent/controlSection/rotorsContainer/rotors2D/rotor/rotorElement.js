@@ -1,10 +1,10 @@
 import { h } from 'preact';
-import "./sinusController.less";
+import "./rotor.less";
 /**
- * Sinus Controller Element
+ * Rotor Element
  * @return {object} presentation element
  */
-const SinusControllerElement = ({onChange, onRemove, onSwitchPlay, width, step, start, isPlaying}) => (
+const RotorElement = ({onChange, onRemove, onSwitchPlay, width, step, start, isPlaying}) => (
 	<div class="dimensionInputs">
 		<button class="removeBtn" onClick={onRemove}>&times;</button>
 		<input type="number" name="width" onInput={onChange} value={width} />
@@ -16,4 +16,4 @@ const SinusControllerElement = ({onChange, onRemove, onSwitchPlay, width, step, 
 	</div>
 );
 
-export default SinusControllerElement;
+export default RotorElement;

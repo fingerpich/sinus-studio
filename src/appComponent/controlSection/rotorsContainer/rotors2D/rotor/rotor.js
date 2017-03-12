@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
-import SinusControllerElement from './sinusControllerElement.js';
+import RotorElement from './rotorElement.js';
 
 /**
  * @param {object} state global state which contains all state we created
@@ -35,13 +35,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 };
 
 /**
- * connect SinusControllerElement to redux store with above methods
+ * connect RotorElement to redux store with above methods
  * @type {object}
  */
-const SinusController = connect(
+const Rotor = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(SinusControllerElement);
+)(RotorElement);
 
 
-export default SinusController
+export default Rotor;

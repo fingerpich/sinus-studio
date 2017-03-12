@@ -1,8 +1,8 @@
 import { h, Component } from 'preact';
 import { connect } from 'preact-redux';
 
-import { removeDimension, changeProperty, addDimension} from './dimensionsActionCreator.js';
-import DimensionControllerElement from './dimensionsControllerPresentation.js';
+import { removeDimension, changeProperty, addDimension} from './rotor2D_AC.js';
+import Rotor2dControllerElement from './rotors2DElement.js';
 
 /**
  * present list of products
@@ -11,8 +11,8 @@ import DimensionControllerElement from './dimensionsControllerPresentation.js';
  */
 const mapStateToProps = (state, ownProps) => {
 	return {
-		list: state.dimensionsReducer[ownProps.label],
-		label:ownProps.label
+		rotor2DData: state.rotorsData[ownProps.label],
+		rotorLabel:ownProps.label.toUpperCase()
 	}
 };
 
@@ -39,10 +39,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
  * connect DimensionControllerElement to redux store with above methods
  * @type {object}
  */
-const DimensionController = connect(
+const Rotor2D = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(DimensionControllerElement);
+)(Rotor2dControllerElement);
 
 
-export default DimensionController
+export default Rotor2D
