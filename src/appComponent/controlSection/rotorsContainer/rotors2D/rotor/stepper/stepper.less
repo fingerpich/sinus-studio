@@ -1,0 +1,43 @@
+.stepper{
+  border: 1px solid #333;
+  width: 80px;
+  height: 36px;
+  position: relative;
+  display: flex;
+  clear: both;
+  overflow: hidden;
+  justify-content: space-between;
+  .minus,.plus{
+	width:36px;
+	height:36px;
+	display:block;
+	color:#666;
+	float:left;
+	margin:0;
+  }
+  .plus{
+	float: right;
+  }
+  .number{
+	text-align: center;
+	position: absolute;
+	color: #ccc;
+	width: 27%;
+	height: 100%;
+	margin: 0 36%;
+	overflow: hidden;
+	display: block;
+	float: left;
+	background: none;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	/* z-index: -1; */
+
+	&::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
+	-moz-appearance: textfield;
+  }
+}

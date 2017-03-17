@@ -21,8 +21,7 @@ const mapStateToProps = (state, ownProps) => {
  */
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
-		onChange: (e) => {
-			let {name,value}=e.target;
+		onChange: (name,value) => {
 			ownProps.onChange({name,value});
 		},
 		onRemove: () => {

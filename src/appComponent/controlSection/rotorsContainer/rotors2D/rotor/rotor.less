@@ -2,6 +2,11 @@
   transition: opacity 5s;
   -webkit-transition: opacity 5s;
   white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 
   .playBtn {
 	border:none;
@@ -10,14 +15,14 @@
 	@duration: 0.3s;
 	@sin:  0.866;
 	@size: 12px;
-
 	//border: @size*0.05 solid @color;
 	outline:none;
 	border-radius: 50%;
 	//margin: 0;
 	padding: 0;
-	width: @size;
-	height: @size;
+	width: @size+2;
+	height: @size+2;
+	overflow: hidden;
 	font-size: 0;
 	white-space: nowrap;
 	text-align: center;
@@ -83,6 +88,7 @@
 	font-size:18px;
 	color:#777;
   }
+  .stepper{}
   input{
 	outline: none;
 	height: 1.5rem;
