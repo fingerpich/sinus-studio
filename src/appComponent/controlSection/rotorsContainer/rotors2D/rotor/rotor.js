@@ -1,5 +1,5 @@
-import { h, Component } from 'preact';
-import { connect } from 'preact-redux';
+import {h, Component} from 'preact';
+import {connect} from 'preact-redux';
 import RotorElement from './rotorElement.js';
 
 /**
@@ -7,10 +7,10 @@ import RotorElement from './rotorElement.js';
  * @param {object} ownProps associated property in parent component
  */
 const mapStateToProps = (state, ownProps) => {
-	if(ownProps.isPlaying){
-		setTimeout(()=>{
-			ownProps.onChange({name:"start",value:parseInt(ownProps.start)+1});
-		},10);
+	if (ownProps.isPlaying) {
+		setTimeout(()=> {
+			ownProps.onChange({name: "start", value: parseInt(ownProps.start) + 1});
+		}, 10);
 	}
 	return {...state.dimension};
 };
@@ -21,14 +21,14 @@ const mapStateToProps = (state, ownProps) => {
  */
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
-		onChange: (name,value) => {
-			ownProps.onChange({name,value});
+		onChange: (name, value) => {
+			ownProps.onChange({name, value});
 		},
 		onRemove: () => {
 			ownProps.onRemove();
 		},
 		onSwitchPlay: () => {
-			ownProps.onChange({name:'isPlaying',value:!ownProps.isPlaying});
+			ownProps.onChange({name: 'isPlaying', value: !ownProps.isPlaying});
 		}
 	}
 };

@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import {h} from 'preact';
 import "./rotor.less";
 import Stepper from './stepper/stepper.js';
 
@@ -12,12 +12,9 @@ const RotorElement = ({onChange, onRemove, onSwitchPlay, width, step, start, isP
 		<Stepper name="width" value={width} onChange={onChange}/>
 		<Stepper name="step" value={step} onChange={onChange}/>
 		<Stepper name="start" value={start} onChange={onChange}/>
-		{/*<input type="number" name="width" onInput={onChange} value={width} />*/}
-		{/*<input type="number" name="step" onInput={onChange} value={step} />*/}
-		{/*<input type="number" name="start" onInput={onChange} value={start} />*/}
-		<button className={'playBtn '+(isPlaying?'pause':'play')} onClick={onSwitchPlay}>
+		<button className={'playBtn ' + (isPlaying ? 'pause' : 'play')} onClick={onSwitchPlay}>
 			<span class="left"></span><span class="right"></span>
-        </button>
+		</button>
 	</div>
 );
 

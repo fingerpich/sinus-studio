@@ -1,5 +1,5 @@
-import { h, Component } from 'preact';
-import { connect } from 'preact-redux';
+import {h, Component} from 'preact';
+import {connect} from 'preact-redux';
 import ControlsSectionElement from './controlSectionElement'
 
 /**
@@ -20,8 +20,8 @@ const mapStateToProps = (state, ownProps) => {
  */
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
-		onOptionChange: (name,value) => {
-			dispatch({type:'CHANGE_OPTIONS',data:{name,value}});
+		onOptionChange: (name, value) => {
+			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
 		},
 	}
 };

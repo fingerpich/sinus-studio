@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import {h, Component} from 'preact';
 import {RenderController} from  './renderController.js';
 /**
  * @extends {Component}
@@ -27,7 +27,7 @@ class Scene extends Component {
 	 */
 	componentDidMount() {
 		const {store} = this.context;
-		this.unsubscribe = store.subscribe(()=>{
+		this.unsubscribe = store.subscribe(()=> {
 			RenderController.onStateChange(store.getState());
 		});
 
@@ -38,7 +38,7 @@ class Scene extends Component {
 	}
 
 	/**
-     * Initialize Scene
+	 * Initialize Scene
 	 */
 	setup() {
 		let {width, height} = this.base.getBoundingClientRect();
@@ -47,8 +47,8 @@ class Scene extends Component {
 		const MARGIN_IN_SMALL_SIZE = 10 / 100;
 		const innerWidth = window.innerWidth - window.innerWidth * MARGIN_IN_SMALL_SIZE;
 		const innerHeight = window.innerHeight - window.innerHeight * MARGIN_IN_SMALL_SIZE;
-		const minWH = Math.min(Math.max(width, Math.min(MIN_SIZE, innerWidth)), Math.max(height, Math.min(MIN_SIZE, innerHeight)))-5;
-		const renderCanvas = RenderController.setup(document.getElementsByClassName("scene")[0],minWH, minWH);
+		const minWH = Math.min(Math.max(width, Math.min(MIN_SIZE, innerWidth)), Math.max(height, Math.min(MIN_SIZE, innerHeight))) - 5;
+		const renderCanvas = RenderController.setup(document.getElementsByClassName("scene")[0], minWH, minWH);
 		this.base.appendChild(renderCanvas);
 	}
 
@@ -56,7 +56,7 @@ class Scene extends Component {
 	 * render this component
 	 */
 	render() {
-		return <div class="scene" />;
+		return <div class="scene"/>;
 	}
 }
 

@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import {h} from 'preact';
 import Rotor2D from './rotors2D/rotors2D.js'
 import './rotorsContainer.less';
 

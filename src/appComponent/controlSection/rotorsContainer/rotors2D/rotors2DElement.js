@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import {h} from 'preact';
 import Rotor from './rotor/rotor.js'
 
 /**
@@ -9,18 +9,18 @@ const Rotor2dControllerElement = ({onAddDimension, onChange, onRemove, rotor2DDa
 	<div class="dimensionController">
 		<b>{rotorLabel} Rotor</b>
 		<button onClick={ onAddDimension }>+</button>
-		{rotor2DData.length?(
-		<div class="inputLabels">
-			<small>start</small>
-			<small>frequency</small>
-			<small>width</small>
-		</div>):''}
+		{rotor2DData.length ? (
+			<div class="inputLabels">
+				<small>start</small>
+				<small>frequency</small>
+				<small>width</small>
+			</div>) : ''}
 		<ul>
-			{rotor2DData.map((dimension ,index)=>
+			{rotor2DData.map((dimension, index)=>
 				<li key={index}>
 					<Rotor
 						{...dimension}
-						onChange={({name,value}) => onChange({name,value,index})}
+						onChange={({name, value}) => onChange({name, value, index})}
 						onRemove={() => onRemove({index})}
 					/>
 				</li>

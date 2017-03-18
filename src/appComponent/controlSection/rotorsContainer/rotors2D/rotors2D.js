@@ -1,7 +1,7 @@
-import { h, Component } from 'preact';
-import { connect } from 'preact-redux';
+import {h, Component} from 'preact';
+import {connect} from 'preact-redux';
 
-import { removeDimension, changeProperty, addDimension} from './rotor2D_AC.js';
+import {removeDimension, changeProperty, addDimension} from './rotor2D_AC.js';
 import Rotor2dControllerElement from './rotors2DElement.js';
 
 /**
@@ -12,7 +12,7 @@ import Rotor2dControllerElement from './rotors2DElement.js';
 const mapStateToProps = (state, ownProps) => {
 	return {
 		rotor2DData: state.rotorsData[ownProps.label],
-		rotorLabel:ownProps.label.toUpperCase()
+		rotorLabel: ownProps.label.toUpperCase()
 	}
 };
 
@@ -24,10 +24,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		onRemove: ({index}) => {
-			dispatch(removeDimension({index,label:ownProps.label}));
+			dispatch(removeDimension({index, label: ownProps.label}));
 		},
-		onChange: ({name,value,index}) => {
-			dispatch(changeProperty({index,name,value,label:ownProps.label}));
+		onChange: ({name, value, index}) => {
+			dispatch(changeProperty({index, name, value, label: ownProps.label}));
 		},
 		onAddDimension: () => {
 			dispatch(addDimension(ownProps.label));

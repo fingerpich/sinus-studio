@@ -4,10 +4,12 @@
 /**
  * reducer changes store by action
  */
-export default (optionState = {showAxes:false,hasHSL:false}, action) => {
+export default (optionState = {showAxes: false, hasHSL: false}, action) => {
 	switch (action.type) {
-		case 'CHANGE_OPTIONS':return changeOption(optionState,action);
-		default: return optionState;
+		case 'CHANGE_OPTIONS':
+			return changeOption(optionState, action);
+		default:
+			return optionState;
 	}
 }
 /**
@@ -15,8 +17,8 @@ export default (optionState = {showAxes:false,hasHSL:false}, action) => {
  * @param {object} action contain type and data
  * @return {object} new state for options
  */
-function changeOption(optionState, action){
+function changeOption(optionState, action) {
 	const newOptionState = {...optionState};
-	newOptionState[action.data.name]=action.data.value;
+	newOptionState[action.data.name] = action.data.value;
 	return newOptionState;
 }

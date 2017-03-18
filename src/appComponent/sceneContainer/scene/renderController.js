@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import * as threeOrbitControlsLib from 'three-orbit-controls'
-const threeOrbitControls= threeOrbitControlsLib.default(THREE);
+const threeOrbitControls = threeOrbitControlsLib.default(THREE);
 import MakeSpline from "./splineMaker";
 
 /**
@@ -14,9 +14,9 @@ class RenderControllerClass {
 	 * @param {number} width canvas width
 	 * @param {number} height canvas height
 	 */
-	setup(cameraControlAreaElement,width,height){
+	setup(cameraControlAreaElement, width, height) {
 		this.renderer = new THREE.WebGLRenderer();
-		this.renderer.setSize(width,height);
+		this.renderer.setSize(width, height);
 
 		this.scene = new THREE.Scene();
 
@@ -28,16 +28,17 @@ class RenderControllerClass {
 
 		return this.renderer.domElement;
 	}
+
 	/**
 	 * Make lights
 	 */
 	addLights() {
 		let light = new THREE.PointLight(0xFF0000, 1, 100);
-		light.position.set( 10, 0, 10 );
+		light.position.set(10, 0, 10);
 		this.scene.add(light);
 
 		light = new THREE.PointLight(0xFF0000, 1, 50);
-		light.position.set( -20, 15, 10 );
+		light.position.set(-20, 15, 10);
 		this.scene.add(light);
 
 		this.renderer.setClearColor(0x222222, 1);
@@ -51,49 +52,50 @@ class RenderControllerClass {
 		// const axes = new THREE.AxisHelper( length );
 		// this.scene.add( axes );
 		const axes = new THREE.Object3D();
-		this.axes=axes;
-		const color=0x2c2c2c;
-		axes.add( this.buildAxis( new THREE.Vector3( -length, 0, 0 ), new THREE.Vector3( length, 0, 0 ), color, true ) ); // +X
-		axes.add( this.buildAxis( new THREE.Vector3( 0, -length, 0 ), new THREE.Vector3( 0, length, 0 ), color, true ) ); // +Y
-		axes.add( this.buildAxis( new THREE.Vector3( 0, 0, -length ), new THREE.Vector3( 0, 0, length ), color, true ) ); // +Z
+		this.axes = axes;
+		const color = 0x2c2c2c;
+		axes.add(this.buildAxis(new THREE.Vector3(-length, 0, 0), new THREE.Vector3(length, 0, 0), color, true)); // +X
+		axes.add(this.buildAxis(new THREE.Vector3(0, -length, 0), new THREE.Vector3(0, length, 0), color, true)); // +Y
+		axes.add(this.buildAxis(new THREE.Vector3(0, 0, -length), new THREE.Vector3(0, 0, length), color, true)); // +Z
 
 		this.scene.add(axes);
 	}
-	buildAxis( src, dst, colorHex, dashed ) {
+
+	buildAxis(src, dst, colorHex, dashed) {
 		var geom = new THREE.Geometry(),
 			mat;
 
-		if(dashed) {
-			mat = new THREE.LineDashedMaterial({ linewidth: 1, color: colorHex, dashSize: 1, gapSize: 1 });
+		if (dashed) {
+			mat = new THREE.LineDashedMaterial({linewidth: 1, color: colorHex, dashSize: 1, gapSize: 1});
 		} else {
-			mat = new THREE.LineBasicMaterial({ linewidth: 1, color: colorHex });
+			mat = new THREE.LineBasicMaterial({linewidth: 1, color: colorHex});
 		}
 
-		geom.vertices.push( src.clone() );
-		geom.vertices.push( dst.clone() );
+		geom.vertices.push(src.clone());
+		geom.vertices.push(dst.clone());
 		geom.computeLineDistances(); // This one is SUPER important, otherwise dashed lines will appear as simple plain lines
 
-		return new THREE.Line( geom, mat, THREE.LinePieces );
+		return new THREE.Line(geom, mat, THREE.LinePieces);
 	}
 
 	/**
 	 * add camera
 	 * @param {object} cameraControlAreaElement its the element which camera could control in it
-     */
+	 */
 	addCamera(cameraControlAreaElement) {
-		this.camera =new THREE.PerspectiveCamera(
+		this.camera = new THREE.PerspectiveCamera(
 			35,         // FOV
 			800 / 640,  // Aspect
 			0.1,        // Near
 			10000       // Far
 		);
 		this.camera.position.set(0, 0, 0);
-		this.camera.position.z = 20;
+		this.camera.position.z = 100;
 		this.camera.lookAt(this.scene.position);
-		const controls = new threeOrbitControls(this.camera,cameraControlAreaElement);
-		const originUpdate=controls.update;
-		const thisComponent=this;
-		controls.update=function(){//when camera state changes
+		const controls = new threeOrbitControls(this.camera, cameraControlAreaElement);
+		const originUpdate = controls.update;
+		const thisComponent = this;
+		controls.update = function () {//when camera state changes
 			originUpdate();
 			thisComponent.onCameraChange();
 		};
@@ -113,6 +115,7 @@ class RenderControllerClass {
 		if (this.curState) this.curState.cameraChanged = true;
 		return true;
 	}
+
 	/**
 	 * it will call back on control changes
 	 */
@@ -125,7 +128,7 @@ class RenderControllerClass {
 	 */
 	rebuildSpline(data) {
 		if (data) {
-			this.axes.visible=data.options.showAxes;
+			this.axes.visible = data.options.showAxes;
 			if (this.spline) this.scene.remove(this.spline);
 			this.spline = MakeSpline(data);
 			this.scene.add(this.spline);
@@ -147,8 +150,8 @@ class RenderControllerClass {
 				this.curState.cameraChanged = false;
 			}
 		}
-		const thisObj=this;
-		requestAnimationFrame(function(){
+		const thisObj = this;
+		requestAnimationFrame(function () {
 			thisObj.repeatRendering();
 		});
 	}
