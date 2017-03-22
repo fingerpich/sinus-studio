@@ -12,8 +12,10 @@ const RotorElement = ({onChange, onRemove, onSwitchPlay, width, step, start, isP
 		<Stepper name="width" value={width} onChange={onChange}/>
 		<Stepper name="step" value={step} onChange={onChange}/>
 		<Stepper name="start" value={start} onChange={onChange}/>
-		<button className={'playBtn ' + (isPlaying ? 'pause' : 'play')} onClick={onSwitchPlay}>
-			<span class="left"></span><span class="right"></span>
+		<button class="playBtn" onClick={onSwitchPlay}>
+			<div className={'playpause ' + (isPlaying ? 'pause' : 'play')}>
+				<span class="left"></span><span class="right"></span>
+			</div>
 		</button>
 	</div>
 );
