@@ -1,61 +1,9 @@
 [![esdoc](https://doc.esdoc.org/github.com/fingerpich/indulgeInnerChild/badge.svg)](https://doc.esdoc.org/github.com/fingerpich/indulgeInnerChild/)
 
 # Indulge your child
-Control a 3d spirograph in a web application
+Draw and animate a 3d spirograph. Written in ES6, using preact, redux, three.js.
 
-# Code 
-This web application use Preact, Redux , three.js which make it lightweight and powerful and clean code.
-and by using core-js we are able to use ES7 features
-and also we are using less, autoprefixer, extract-text-webpack-plugin to generate css and make it in a separated file.
+# Examples
 
-
-## Installation
-
-**1. Clone this repo:**
-
-```sh
-git clone https://github.com/fingerpich/indugeInnerChild.git
-cd indugeInnerChild
-```
-
-**2. Install the dependencies:**
-
-```sh
-npm install
-```
-
-> You're done installing! Now let's get started developing.
-
-
-
-## Development Workflow
-
-
-**3. Start a live-reload development server:**
-
-```sh
-npm run dev
-```
-> open localhost:8080 in your browser
-
-> This is a full web server nicely suited to your project. Any time you make changes within the `src` directory, it will rebuild and even refresh your browser.
-
-
-**4. Generate a production build in `./build`:**
-
-```sh
-npm run build
-```
-
-You can now deploy the contents of the `build` directory to production!
-
-> **Example:** deploy to [surge.sh](https://surge.sh):
->
-> `npm i surge && surge build -d my-app.surge.sh`
-
-##Generate Help
-to generate documentation after installing npm requirements run
-```sh
-esdoc
-```
-and  then you could  see documentation in doc/index.js
+- [an animated 3d spirograph](https://fingerpich.github.io/spiro3d/?QRQD1EQW2VS20VC1VPFqVQW10VS6VC1VPFqVQW10VS1VC54VPTqeVD2EQW10VS5VC1VPFqeVD3EeqVOQAFVHTqq)
+- [an animated 2d spirograph](https://fingerpich.github.io/spiro3d/?QRQD1EQW7VS3VC239VPFqVQW2VS73VC14281VPFqVQW16VS19VC9338VPTqeVD2EeVD3EeqVOQAFVHFqq)

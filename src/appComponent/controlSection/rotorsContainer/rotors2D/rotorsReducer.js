@@ -26,7 +26,7 @@ function addRotor(rotorsState, action) {
 		width: 10,
 		step: 1,
 		start: 90,
-		isPLaying: false,
+		isPlaying: false,
 	});
 
 	return newRotorsState;
