@@ -28,6 +28,8 @@ class Stepper extends Component {
 	}
 
 	value = 0;
+	delay = 150;
+	timeoutObject = 0;
 
 	/**
 	 * increase the value of stepper
@@ -35,6 +37,21 @@ class Stepper extends Component {
 	increase() {
 		this.value++;
 		this.onChange();
+	}
+	/**
+	 * start holding increase button
+	 */
+	holdUp() {
+		this.timeoutObject=setTimeout(() => {
+			this.increase();
+			this.holdUp();
+		},this.delay);
+	}
+	/**
+	 * leave increase button
+	 */
+	leaveUp() {
+		clearTimeout(this.timeoutObject);
 	}
 
 	/**
@@ -44,7 +61,21 @@ class Stepper extends Component {
 		this.value--;
 		this.onChange();
 	}
-
+	/**
+	 * start holding decrease button
+	 */
+	holdDown() {
+		this.timeoutObject=setTimeout(() => {
+				this.decrease();
+				this.holdDown();
+			},this.delay);
+	}
+	/**
+	 * leave decrease buton
+	 */
+	leaveDown() {
+		clearTimeout(this.timeoutObject);
+	}
 
 	/**
 	 * change value on text changed
@@ -78,8 +109,8 @@ class Stepper extends Component {
 			<input class="number" type="number" ref={(input) => {
 				this.textInput = input;
 			}} onInput={this.onInputChange.bind(this)}/>
-			<button class="minus" onClick={this.decrease.bind(this)}>-</button>
-			<button class="plus" onClick={this.increase.bind(this)}>+</button>
+			<button class="minus" onMouseDown={this.holdDown.bind(this)} onMouseUp={this.leaveDown.bind(this)} onClick={this.decrease.bind(this)}>-</button>
+			<button class="plus" onMouseDown={this.holdUp.bind(this)} onMouseUp={this.leaveUp.bind(this)} onClick={this.increase.bind(this)}>+</button>
 		</div>;
 	}
 }
