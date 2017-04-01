@@ -112,7 +112,7 @@ class RenderControllerClass {
 	 * it will call back on camera changes
 	 */
 	onCameraChange() {
-		if (this.curState) this.curState.cameraChanged = true;
+		this.cameraHasChanged = true;
 		return true;
 	}
 
@@ -121,6 +121,7 @@ class RenderControllerClass {
 	 */
 	onStateChange(newState) {
 		this.curState = newState;
+		this.stateHasChanged=true;
 	}
 
 	/**
@@ -140,14 +141,14 @@ class RenderControllerClass {
 	 */
 	repeatRendering() {
 		if (this.curState) {
-			if (!this.curState.hasRendered) {
+			if (this.stateHasChanged) {
 				this.rebuildSpline(this.curState);
 				this.rerender();
-				this.curState.hasRendered = true;
+				this.stateHasChanged=false;
 			}
-			if (this.curState.cameraChanged) {
+			if (this.cameraHasChanged) {
 				this.rerender();
-				this.curState.cameraChanged = false;
+				this.cameraHasChanged = false;
 			}
 		}
 		const thisObj = this;

@@ -1,3 +1,5 @@
+import getStore from './initRedux.js';
+
 const checkState = (state) => {
 	return (state && state.rotorsData && state.rotorsData.xy);
 };
@@ -64,8 +66,6 @@ const replaceList=[
  * shortening url
  */
 const encodeURL = (state) => {
-	delete state.hasRendered;
-	delete state.cameraChanged;
 	let zipUrl=JSON.stringify(state);
 	for(var i=0;i<keyList.length;i++) {
 		zipUrl=zipUrl.replace(new RegExp('"'+keyList[i].key+'":',"g"),keyList[i].zip);
@@ -97,7 +97,7 @@ const decodeURL = (url) => {
  * change browser url to new state and reload it
  */
 export const setUrlByState = () => {
-	var state = window.getStoreState();
+	const state = getStore().getState();
 	window.location.search = encodeURL(state);
 };
 

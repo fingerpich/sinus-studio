@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
  * @param {object} dispatch to run a reducer
  * @param {object} ownProps associated property in parent component
  */
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch, ownProps ) => {
 	return {
 		onOptionChange: (name, value) => {
 			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
