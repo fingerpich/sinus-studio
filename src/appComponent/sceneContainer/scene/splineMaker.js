@@ -17,6 +17,22 @@ const calcDimension = (dimensionData, time) => {
 	}
 	return value;
 };
+
+const pointsColor=[];
+let hasPreviousHSL=false;
+const getPointsColor = (vertexCount,hasHSL) => {
+	if ((vertexCount != pointsColor.length) || (hasHSL!=hasPreviousHSL)){
+		hasPreviousHSL=hasHSL;
+		while (pointsColor.length)pointsColor.pop();
+
+		for (let i = 0; i <= vertexCount; i++) {
+			pointsColor[i] = new THREE.Color(0xffffff);
+			if (hasHSL)pointsColor[i].setHSL(i / vertexCount, 1.0, 0.5);
+		}
+	}
+	return pointsColor;
+};
+
 /**
  * rebuild object
  * @param data it's instance of store
@@ -25,14 +41,11 @@ const calcDimension = (dimensionData, time) => {
 const MakeSpline = (data) => {
 	const {rotorsData, options}=data;
 	const spline = new THREE.Geometry();
-
-	const pointsColor = [];
-	for (let i = 0; i <= 360; i++) {
-		pointsColor[i] = new THREE.Color(0xffffff);
-		if (options.hasHSL)pointsColor[i].setHSL(i / 360, 1.0, 0.5);
-	}
-
-	for (let time = 0; time <= 360; time++) {
+	const precent = Math.min(options.precent, options.steps);
+	let length = precent/options.steps*360 + 1;
+	let steps = options.steps || 360;
+	let everyStep = Math.round((360 / steps) * 100000) / 100000;
+	for (let time = 0; time < length; time += everyStep) {
 		const xy = calcDimension(rotorsData.xy, time);
 		let x = xy[0];
 		let y = xy[1];
@@ -45,8 +58,7 @@ const MakeSpline = (data) => {
 		const point = new THREE.Vector3(x, y, z);
 		spline.vertices.push(point);
 	}
-	spline.colors = pointsColor;
-
+	spline.colors = getPointsColor(spline.vertices.length, options.hasHSL);
 
 	const material = new THREE.LineBasicMaterial({
 		color: 0xffffff,

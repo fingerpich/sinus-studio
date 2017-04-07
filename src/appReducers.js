@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import rotorsReducer from './appComponent/controlSection/rotorsContainer/rotors2D/rotorsReducer.js'
+import rotorsReducer from './appComponent/controlSection/rotors2D/rotorsReducer.js'
 import optionsReducer from './appComponent/controlSection/optionReducer'
 
 /**

@@ -4,7 +4,7 @@
 /**
  * reducer changes store by action
  */
-export default (optionState = {showAxes: false, hasHSL: false}, action) => {
+export default (optionState = {showAxes: false, hasHSL: false,showMoreControl:false,precent:100,steps:360}, action) => {
 	switch (action.type) {
 		case 'CHANGE_OPTIONS':
 			return changeOption(optionState, action);

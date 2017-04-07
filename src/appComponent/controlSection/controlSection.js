@@ -1,5 +1,6 @@
 import {h, Component} from 'preact';
 import {connect} from 'preact-redux';
+import getStore from '../../initRedux.js';
 import ControlsSectionElement from './controlSectionElement'
 
 /**
@@ -7,7 +8,18 @@ import ControlsSectionElement from './controlSectionElement'
  * @param {object} state global state which contains all state we created
  * @param {object} ownProps associated property in parent component
  */
+let timeoutVar;
+const store = getStore();
 const mapStateToProps = (state, ownProps) => {
+	if (state.options.isPlayDrawing && !timeoutVar) {
+		timeoutVar=setTimeout(()=> {
+			timeoutVar=0;
+			let state = store.getState();
+			let value=parseInt(state.options.precent || 0);
+			value=value>state.options.steps?0:value+1;
+			store.dispatch({type: 'CHANGE_OPTIONS', data: {name:'precent', value}});
+		}, 10);
+	}
 	return {
 		options: state.options,
 	}
@@ -23,6 +35,16 @@ const mapDispatchToProps = (dispatch, ownProps ) => {
 		onOptionChange: (name, value) => {
 			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
 		},
+		onPrecentChange: (name,value,steps) => {
+			if(value>steps)value=0;
+			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
+		},
+		onSwitchPlayDrawing: (isPlaying) => {
+			dispatch({type: 'CHANGE_OPTIONS', data: {name:'isPlayDrawing', value:!isPlaying}});
+		},
+		onResetDrawing: (steps) => {
+			dispatch({type: 'CHANGE_OPTIONS', data: {name:'precent', value:steps}});
+		}
 	}
 };
 

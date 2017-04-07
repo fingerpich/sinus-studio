@@ -4,8 +4,89 @@
   flex-direction: column;
   .controlChanges {
 	flex-grow: 1;
+	padding: 0.5rem;
 	.dimensionController {
 	  text-align: center;
+	  max-width: 300px;
+	  min-width: 200px;
+	  //width: 270px;
+	  margin: 20px auto;
+	  b {
+		color: #afafaf;
+		/* text-shadow: 0 0 20px #8a8a8a; */
+		font-size: 0.75rem;
+	  }
+	}
+  }
+  button {
+	background: none;
+	border: 1px solid #252525;
+	border-radius: 3px;
+	color: #ececec;
+	margin: 0 5px;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	line-height: 1rem;
+	outline: none;
+	/* box-shadow: 0 0 5px 0 #444; */
+  }
+  ul {
+	padding: 0;
+	margin: 0.1rem 0 0.6rem;
+	li {
+	  padding: 2px;
+	  list-style: none;
+	}
+  }
+
+
+  .drawingControl{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	margin:0 0 5px;
+	&.hide{
+	  display:none;
+	}
+	color:#777;
+	font-size: 12px;
+
+	.controlLength{
+	  padding:15px 0 0;
+	  display: flex;
+	  flex-direction: row;
+	  flex-wrap: nowrap;
+	  justify-content: space-around;
+	  align-items: flex-start;
+	  button{
+		padding: 5px;
+		height: 39px;
+		margin: 0 0 0 3px;
+		width: 41px;
+		border: 1px solid #333333;
+	  }
+	  .resetBtn{
+		cursor:pointer;
+	  }
+	}
+  }
+
+  .inputLabels {
+	width: 73%;
+	margin: auto;
+	clear: both;
+	overflow: hidden;
+	small {
+	  width: 33.3%;
+	  text-align: center;
+	  display: block;
+	  float: right;
+	  color: #444444;
+	  text-shadow: none;
+	  margin: -2px 0px -3px;
 	}
   }
 }

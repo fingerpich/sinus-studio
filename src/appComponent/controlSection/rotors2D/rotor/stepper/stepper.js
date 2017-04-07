@@ -3,7 +3,7 @@ import "./stepper.less";
 /**
  * Stepper Element used for change numbers in all device easily
  * @example
- * <Stepper/>
+ * <Stepper name="propName" onchange={(name,value)=>{}}/>
  */
 class Stepper extends Component {
 	/**
