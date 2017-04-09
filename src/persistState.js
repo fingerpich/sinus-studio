@@ -100,6 +100,10 @@ export const setUrlByState = () => {
 	const state = getStore().getState();
 	window.location.search = encodeURL(state);
 };
+export const getUrlByState = () => {
+	const state = getStore().getState();
+	return encodeURL(state);
+};
 
 /**
  * save last State
