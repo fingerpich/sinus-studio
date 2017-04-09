@@ -71,6 +71,7 @@
   "dependencies": {
     "preact": "^4.8.0",
     "preact-redux": "^1.0.1",
+    "react-ga": "^2.1.2",
     "redux": "^3.5.2",
     "three": "^0.84.0",
     "three-orbit-controls": "^82.1.0"

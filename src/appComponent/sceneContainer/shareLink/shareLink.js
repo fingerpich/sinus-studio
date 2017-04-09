@@ -1,5 +1,7 @@
 import {h, render, Component} from 'preact';
 import "./shareLink.less";
+import ReactGA from 'react-ga';
+
 /**
  * Share Link element shows the link in another section
  * @example
@@ -25,6 +27,10 @@ class ShareLink extends Component {
 	 * open and get the input data
 	 */
 	open(){
+		ReactGA.event({
+			category: 'share',
+			action: 'open share box'
+		});
 		if (this.props.getLink) {
 			this.link = this.props.getLink();
 		}
