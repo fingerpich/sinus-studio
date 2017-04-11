@@ -6,7 +6,6 @@ import "./shareLink.less";
  * <ShareLink onActivate={()=>{}}/>
  */
 class ShareLink extends Component {
-
 	link="";
 
 	constructor() {
@@ -48,9 +47,10 @@ class ShareLink extends Component {
 	 */
 	render(props, state) {
 		return <div class="shareSection">
-			<a onClick={ this.toggle() } class="shareButton">Share Link</a>
+			<a onClick={ this.toggle.bind(this) } class="shareButton">Share Link</a>
 			<div class={"shareBox "+(this.state.state=='open'?"":"hide")}>
-				<input type="text" className="shareLink" onBlur={this.close()} value={this.link}/>
+				<input type="text" onClick="this.setSelectionRange(0, this.value.length)" className="shareLink"  onBlur={this.close.bind(this)} value={this.link}/>
+				copy above link to share
 			</div>
 		</div>
 	}
