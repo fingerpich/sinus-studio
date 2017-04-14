@@ -14,7 +14,7 @@ import {getUrlByState} from '../../persistState.js';
 const SceneContainer = () => (
 	<div class="sceneContainer">
 		<ShareLink class="share" getLink={getUrlByState}/>
-		<Scene {...{zoom: 1, rotateX: 0, rotateY: 0}} />
+		<Scene/>
 	</div>
 );
 

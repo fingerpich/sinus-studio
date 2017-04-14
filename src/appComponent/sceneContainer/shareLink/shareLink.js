@@ -6,13 +6,32 @@ import "./shareLink.less";
  * <ShareLink onActivate={()=>{}}/>
  */
 class ShareLink extends Component {
-	link="";
 
+	/**
+	 * constructor
+	 */
 	constructor() {
 		super();
 		this.state.state='close';
 	}
 
+	/**
+	 * componentDidMount
+	 */
+	componentDidMount() {
+		this.highlightAll();
+	}
+
+	/**
+	 * highlight input
+	 */
+	highlightAll() {
+		this.shareInput.focus();
+		setTimeout(()=>{
+			this.shareInput.setSelectionRange(0, this.shareInput.value.length);
+			this.shareInput.select();
+		},300)
+	}
 	/**
 	 * close the share link win
 	 */
@@ -20,6 +39,7 @@ class ShareLink extends Component {
 		this.setState({state:'close'});
 	}
 
+	link="";
 	/**
 	 * open and get the input data
 	 */
@@ -37,7 +57,10 @@ class ShareLink extends Component {
 		if(this.state.state=='open'){
 			this.close();
 		}
-		else this.open();
+		else {
+			this.open();
+			this.highlightAll()
+		}
 	}
 
 	/**
@@ -47,10 +70,10 @@ class ShareLink extends Component {
 	 */
 	render(props, state) {
 		return <div class="shareSection">
-			<a onClick={ this.toggle.bind(this) } class="shareButton">Share Link</a>
+			<a onClick={ this.toggle.bind(this) } class="shareButton">share</a>
 			<div class={"shareBox "+(this.state.state=='open'?"":"hide")}>
-				<input type="text" onClick="this.setSelectionRange(0, this.value.length)" className="shareLink"  onBlur={this.close.bind(this)} value={this.link}/>
-				copy above link to share
+				<h6>share a link to this</h6>
+				<input type="text" ref={(input) => { this.shareInput = input; }} className="shareLink" onClick={this.highlightAll.bind(this)} onBlur={this.close.bind(this)} value={this.link}/>
 			</div>
 		</div>
 	}
