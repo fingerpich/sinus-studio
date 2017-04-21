@@ -67,7 +67,6 @@ class ShareLink extends Component {
 		this.props.goClick && this.props.goClick();
 	}
 
-    //onBlur={this.close.bind(this)}
 	/**
 	 * render function
 	 * @param {object} props
@@ -78,8 +77,8 @@ class ShareLink extends Component {
 			<a onClick={ this.toggle.bind(this) } class="shareButton">share</a>
 			<div class={"shareBox "+(this.state.state=='open'?"":"hide")}>
 				<h6>share a link to this</h6>
-				<input type="text" ref={(input) => { this.shareInput = input; }} className="shareLink" onClick={this.highlightAll.bind(this)}  value={this.link}/>
-				<button class="goButton" onClick={this.goClick}>Go</button>
+				<input type="text" ref={(input) => { this.shareInput = input; }} className="shareLink" onClick={this.highlightAll.bind(this)} onBlur={this.close.bind(this)} value={this.link}/>
+				<button class="goButton" onClick={this.goClick.bind(this)}>Go</button>
 			</div>
 		</div>
 	}
