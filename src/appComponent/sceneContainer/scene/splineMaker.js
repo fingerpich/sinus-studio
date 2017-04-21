@@ -41,8 +41,8 @@ const getPointsColor = (vertexCount,hasHSL) => {
 const MakeSpline = (data) => {
 	const {rotorsData, options}=data;
 	const spline = new THREE.Geometry();
-	const precent = Math.min(options.precent, options.steps);
-	let length = precent/options.steps*360 + 1;
+	const progressedSteps = Math.min(options.progressedSteps, options.steps);
+	let length = progressedSteps/options.steps*360 + 1;
 	let steps = options.steps || 360;
 	let everyStep = Math.round((360 / steps) * 100000) / 100000;
 	for (let time = 0; time < length; time += everyStep) {

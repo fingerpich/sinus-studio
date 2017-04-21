@@ -6,7 +6,7 @@ import './controlSection.less';
 /**
  * present control section
  */
-const ControlsSectionElement = ({options, onOptionChange, shareButtonClicked, onSwitchPlayDrawing, onResetDrawing, onPrecentChange}) => (
+const ControlsSectionElement = ({options, onOptionChange, shareButtonClicked, onSwitchPlayDrawing, onResetDrawing, onProgressedStepsChange}) => (
 	<div class="controlSection">
 		<div class="controlChanges">
 			<Rotor2D label="xy"/>
@@ -21,7 +21,7 @@ const ControlsSectionElement = ({options, onOptionChange, shareButtonClicked, on
 				</div>
 				<div class="lengthSetter">
 					<div>length</div>
-					<Stepper name="precent" value={options.precent} onChange={(name,value)=>onPrecentChange(name,value,options.steps)}/>
+					<Stepper name="progressedSteps" value={options.progressedSteps} onChange={(name,value)=>onProgressedStepsChange(name,value,options.steps)}/>
 				</div>
 				<div class="controlLength">
 					<button class="resetBtn" onClick={()=>onResetDrawing(options.steps)}>

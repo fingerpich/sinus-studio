@@ -15,9 +15,9 @@ const mapStateToProps = (state, ownProps) => {
 		timeoutVar=setTimeout(()=> {
 			timeoutVar=0;
 			let state = store.getState();
-			let value=parseInt(state.options.precent || 0);
+			let value=parseInt(state.options.progressedSteps || 0);
 			value=value>state.options.steps?0:value+1;
-			store.dispatch({type: 'CHANGE_OPTIONS', data: {name:'precent', value}});
+			store.dispatch({type: 'CHANGE_OPTIONS', data: {name:'progressedSteps', value}});
 		}, 10);
 	}
 	return {
@@ -35,7 +35,7 @@ const mapDispatchToProps = (dispatch, ownProps ) => {
 		onOptionChange: (name, value) => {
 			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
 		},
-		onPrecentChange: (name,value,steps) => {
+		onProgressedStepsChange: (name,value,steps) => {
 			if(value>steps)value=0;
 			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
 		},
@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch, ownProps ) => {
 			dispatch({type: 'CHANGE_OPTIONS', data: {name:'isPlayDrawing', value:!isPlaying}});
 		},
 		onResetDrawing: (steps) => {
-			dispatch({type: 'CHANGE_OPTIONS', data: {name:'precent', value:steps}});
+			dispatch({type: 'CHANGE_OPTIONS', data: {name:'progressedSteps', value:steps}});
 		}
 	}
 };
