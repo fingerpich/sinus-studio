@@ -20,8 +20,15 @@ class ShareLink extends Component {
 	 */
 	componentDidMount() {
 		this.highlightAll();
+		window.onclick =(e)=>{
+			if(this.state.state=='open')
+				this.close();
+		}
 	}
 
+	boxClick(e) {
+		e.stopPropagation();
+	}
 	/**
 	 * highlight input
 	 */
@@ -43,25 +50,14 @@ class ShareLink extends Component {
 	/**
 	 * open and get the input data
 	 */
-	open(){
+	open(e){
 		if (this.props.getLink) {
 			this.link = this.props.getLink();
 		}
 		this.setState({state:'open'});
+		e.stopPropagation();
 	}
 
-	/**
-	 * toggle share box
-	 */
-	toggle(){
-		if(this.state.state=='open'){
-			this.close();
-		}
-		else {
-			this.open();
-			this.highlightAll()
-		}
-	}
 
 	goClick(){
 		this.props.goClick && this.props.goClick();
@@ -74,10 +70,12 @@ class ShareLink extends Component {
 	 */
 	render(props, state) {
 		return <div class="shareSection">
-			<a onClick={ this.toggle.bind(this) } class="shareButton">share</a>
-			<div class={"shareBox "+(this.state.state=='open'?"":"hide")}>
+			<a onClick={ this.open.bind(this) } class="shareButton">share</a>
+			<div class={"shareBox "+(this.state.state=='open'?"":"hide")} onClick={this.boxClick.bind(this)}>
 				<h6>share a link to this</h6>
-				<input type="text" ref={(input) => { this.shareInput = input; }} className="shareLink" onClick={this.highlightAll.bind(this)} onBlur={this.close.bind(this)} value={this.link}/>
+				<input type="text" ref={(input) => { this.shareInput = input; }} className="shareLink"
+					   onClick={this.highlightAll.bind(this)}
+					   value={this.link}/>
 				<button class="goButton" onClick={this.goClick.bind(this)}>Go</button>
 			</div>
 		</div>
