@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress",
     "start": "npm run dev",
-    "build": "cross-env NODE_ENV=production webpack -p --progress",
+    "build": "cross-env NODE_ENV=production webpack -p --progress --profile --colors",
     "testlint": "eslint src tests/**/*.js",
     "test": "mocha --compilers js:babel-register --recursive ./**/*.desc.js"
   },
