@@ -1,7 +1,31 @@
 .shareBox{
-  border:1px solid silver;
-  padding: 20px;
-  .hide{
+  border: 1px solid #777;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 0 0 30px #999;
+  position: absolute;
+  width: 220px;
+  h6{
+	color:#fff;
+	padding:3px;
+	font-size:0.75rem;
+	direction: ltr;
+	margin: 0;
+  }
+  input{
+	padding:10px 5px;
+	background:#eee;
+	border:none;
+	width: 170px;
+	float:left;
+  }
+  .goButton{
+	float: right;
+	padding: 10px;
+	background: #0493f9;
+	border: 0;
+  }
+  &.hide{
 	display: none;
   }
 }
@@ -19,4 +43,5 @@
   border: 1px solid #353535;
   border-radius: 3px;
   cursor: pointer;
+  width:72px;
 }

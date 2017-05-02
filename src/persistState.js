@@ -13,8 +13,8 @@ export const loadState = () => {
 	if (url.length > 10) {
 		try {
 			const url = window.location.search;
-			const urlstring = decodeURL(url);
-			result = JSON.parse(urlstring);
+			result = decodeURL(url);
+
 		} catch (e) {
 			//redirect to 404
 		}
@@ -46,6 +46,9 @@ const keyList=[
 	{key:"options",zip:"O"},
 	{key:"hasHSL",zip:"H"},
 	{key:"showAxes",zip:"A"},
+	{key:"progressedSteps",zip:"I"},
+	{key:"steps",zip:"J"},
+	{key:"showMoreControl",zip:"G"},
 	{key:"xy",zip:"D1"},
 	{key:"yz",zip:"D2"},
 	{key:"xz",zip:"D3"},
@@ -66,7 +69,7 @@ const replaceList=[
  * shortening url
  */
 const encodeURL = (state) => {
-	let zipUrl=JSON.stringify(state);
+	let zipUrl=JSON.stringify(sanitizeState(state));
 	for(var i=0;i<keyList.length;i++) {
 		zipUrl=zipUrl.replace(new RegExp('"'+keyList[i].key+'":',"g"),keyList[i].zip);
 	}
@@ -78,19 +81,38 @@ const encodeURL = (state) => {
 	zipUrl="?" + encodeURIComponent(zipUrl);
 	return zipUrl;
 };
-
+const isArray = (data) => {
+	return (Object.prototype.toString.call(data) === "[object Array]");
+};
+const sanitizeState = (state) => {
+	if (isArray(state)) {
+		for (let sti of state) {
+			sanitizeState(sti);
+		}
+	}
+	else if(typeof(state)=='object') {
+		for (let [k, v] of Object.entries(state)) {
+			if (keyList.filter(x => x.key == k).length < 1) {
+				delete state[k];
+			}
+			sanitizeState(state[k]);
+		}
+	}
+	return state;
+};
 /**
  * decode url
  */
 const decodeURL = (url) => {
-	let decodeUrl=decodeURIComponent(url.slice(1));
-	for(var j=0; j<replaceList.length; j++) {
-		decodeUrl=decodeUrl.replace(new RegExp(replaceList[j].to,"g"),replaceList[j].from);
+	let decodedUrl = decodeURIComponent(url.slice(1));
+	for (let item of replaceList) {
+		decodedUrl = decodedUrl.replace(new RegExp(item.to, "g"), item.from);
 	}
-	for(var i=0;i<keyList.length;i++) {
-		decodeUrl=decodeUrl.replace(new RegExp(keyList[i].zip,"g"),'"'+keyList[i].key+'":');
+	for (let item of keyList) {
+		decodedUrl = decodedUrl.replace(new RegExp(item.zip, "g"), '"' + item.key + '":');
 	}
-	return decodeUrl;
+	let state = JSON.parse(decodedUrl);
+	return sanitizeState(state);
 };
 
 /**
@@ -102,7 +124,7 @@ export const setUrlByState = () => {
 };
 export const getUrlByState = () => {
 	const state = getStore().getState();
-	return encodeURL(state);
+	return window.location.href+encodeURL(state);
 };
 
 /**

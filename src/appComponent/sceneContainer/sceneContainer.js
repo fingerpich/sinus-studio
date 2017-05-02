@@ -5,15 +5,16 @@ import {h} from 'preact';
 
 import Scene from './scene/scene.js';
 import ShareLink from './shareLink/shareLink.js';
-import {getUrlByState} from '../../persistState.js';
+import './sceneContainer.less';
+import {getUrlByState, setUrlByState} from '../../persistState.js';
 /**
  * scene container
  * @return {object} presentation element
  */
 const SceneContainer = () => (
 	<div class="sceneContainer">
-		<ShareLink class="share" getLink={getUrlByState()}/>
-		<Scene {...{zoom: 1, rotateX: 0, rotateY: 0}} />
+		<ShareLink class="share" getLink={getUrlByState} goClick={setUrlByState}/>
+		<Scene/>
 	</div>
 );
 
