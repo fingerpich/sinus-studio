@@ -7,7 +7,7 @@ import './index.less';
 import ReactGA from 'react-ga'
 import {getUrlByState} from 'persistState.js'
 
-ReactGA.initialize('UA-98265042-1', {
+ReactGA.initialize('UA-98265042-3', {
 	debug: true,
 	titleCase: false,
 	gaOptions: {
