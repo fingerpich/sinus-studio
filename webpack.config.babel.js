@@ -5,6 +5,8 @@ import autoprefixer from 'autoprefixer';
 import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 const ENV = process.env.NODE_ENV || 'development';
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
 	entry: './src/index.js',
 
@@ -90,22 +92,7 @@ module.exports = {
 				windows: true
 			}
 		}),
-			new webpack.LoaderOptionsPlugin({
-				minimize: true,
-				debug: false
-			}),
-			new webpack.optimize.UglifyJsPlugin({
-				beautify: false,
-				mangle: {
-					screw_ie8: true,
-					keep_fnames: true
-				},
-				compress: {
-					screw_ie8: true
-				},
-				comments: false
-			}),
-		new webpack.optimize.DedupePlugin(),
+			new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new SWPrecacheWebpackPlugin(
 			{
