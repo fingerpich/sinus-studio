@@ -1,5 +1,6 @@
 import {h, render, Component} from 'preact';
 import "./shareLink.less";
+
 /**
  * Share Link element shows the link in another section
  * @example
@@ -50,7 +51,7 @@ class ShareLink extends Component {
 	/**
 	 * open and get the input data
 	 */
-	open(e){
+	open(){
 		if (this.props.getLink) {
 			this.link = this.props.getLink();
 		}
