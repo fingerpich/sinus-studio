@@ -81,7 +81,7 @@ class Stepper extends Component {
 	 * change value on text changed
 	 */
 	onInputChange(e) {
-		this.value = this.textInput.value;
+		this.value = parseInt(this.textInput.value || 0) || 0;
 		this.onChange();
 	}
 
@@ -116,6 +116,4 @@ class Stepper extends Component {
 }
 export default Stepper;
 
-
-//TODO: write on holding increase or decrease button condition
 //TODO: on holding key up prevent bubling and run window key down because ThreeOrbit add listener to window

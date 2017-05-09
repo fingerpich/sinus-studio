@@ -37,6 +37,7 @@ const mapDispatchToProps = (dispatch, ownProps ) => {
 		},
 		onProgressedStepsChange: (name,value,steps) => {
 			if(value>steps)value=0;
+			if(value<0)value=steps;
 			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
 		},
 		onSwitchPlayDrawing: (isPlaying) => {
