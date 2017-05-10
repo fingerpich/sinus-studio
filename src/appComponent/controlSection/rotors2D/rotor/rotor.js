@@ -6,11 +6,9 @@ import RotorElement from './rotorElement.js';
  * @param {object} state global state which contains all state we created
  * @param {object} ownProps associated property in parent component
  */
-let timeoutVar;
 const mapStateToProps = (state, ownProps) => {
-	if (ownProps.isPlaying && !timeoutVar) {
-		timeoutVar=setTimeout(()=> {
-			timeoutVar=0;
+	if (ownProps.isPlaying) {
+		setTimeout(()=> {
 			ownProps.onChange({name: "start", value: parseInt(ownProps.start) + 1});
 		}, 10);
 	}
