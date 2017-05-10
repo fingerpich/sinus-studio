@@ -51,7 +51,7 @@ class ShareLink extends Component {
 	/**
 	 * open and get the input data
 	 */
-	open(){
+	open(e) {
 		if (this.props.getLink) {
 			this.link = this.props.getLink();
 		}
@@ -60,7 +60,7 @@ class ShareLink extends Component {
 	}
 
 
-	goClick(){
+	goClick() {
 		this.props.goClick && this.props.goClick();
 	}
 

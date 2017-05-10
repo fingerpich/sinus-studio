@@ -7,6 +7,10 @@ const checkState = (state) => {
  * load last State
  * @return {object} saved state
  */
+const defaultState= {
+	"rotorsData": {"xy": [], "yz": [], "xz": []},
+	"options": {"showAxes": false, "hasHSL": false, "showMoreControl": false, "progressedSteps": 360, "steps": 360}
+};
 export const loadState = () => {
 	const url = window.location.search;
 	let result = 0;
@@ -30,7 +34,8 @@ export const loadState = () => {
 			result = undefined;
 		}
 	}
-	return checkState(result) ? result : undefined;
+	return result? {...defaultState, ...result} : undefined;
+	// return checkState(result) ? result : undefined;
 };
 
 
@@ -124,7 +129,7 @@ export const setUrlByState = () => {
 };
 export const getUrlByState = () => {
 	const state = getStore().getState();
-	return window.location.href+encodeURL(state);
+	return window.location.href.split('?')[0] + encodeURL(state);
 };
 
 /**
