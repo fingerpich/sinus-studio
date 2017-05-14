@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import * as threeOrbitControlsLib from 'three-orbit-controls'
+import * as threeOrbitControlsLib from 'three-orbit-controls';
 const threeOrbitControls = threeOrbitControlsLib.default(THREE);
 import MakeSpline from "./splineMaker";
 
@@ -62,9 +62,9 @@ class RenderControllerClass {
 	}
 
 	buildAxis(src, dst, colorHex, dashed) {
-		var geom = new THREE.Geometry(),
-			mat;
+		const geom = new THREE.Geometry();
 
+		let mat;
 		if (dashed) {
 			mat = new THREE.LineDashedMaterial({linewidth: 1, color: colorHex, dashSize: 1, gapSize: 1});
 		} else {
