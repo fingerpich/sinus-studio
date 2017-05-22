@@ -13,6 +13,7 @@
 	margin: 10px 0 0;
 	padding: 0;
 	outline:none;
+	display:block;
 	text-align: left;
   }
   h6{
@@ -22,19 +23,23 @@
 	direction: ltr;
 	margin: 0;
   }
-  input{
-	padding:10px 5px;
-	background:#eee;
-	border:none;
-	width: 170px;
-	float:left;
+  .shareForm{
+	display:flex;
+	flex-direction: row-reverse;
+	input{
+	  flex:1 1 auto;
+	  padding:10px 5px;
+	  background:#eee;
+	  border:none;
+	}
+	.goButton{
+	  flex:50px;
+	  padding: 10px;
+	  background: #0493f9;
+	  border: 0;
+	}
   }
-  .goButton{
-	float: right;
-	padding: 10px;
-	background: #0493f9;
-	border: 0;
-  }
+
   &.hide{
 	display: none;
   }
