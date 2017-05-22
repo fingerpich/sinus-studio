@@ -65,9 +65,9 @@ class ShareLink extends Component {
 	}
 
 	downloadImage(){
-		let image = document.getElementsByTagName("canvas").toDataURL("image/png")
-			.replace("image/png", "image/octet-stream");
-		this.downloadLink.setAttribute("href", image);
+		let image = document.getElementsByTagName("canvas")[0].toDataURL();
+		this.downloadLink.href = image;
+		this.downloadLink.download = "imagename";
 	}
 
 	/**
@@ -79,15 +79,19 @@ class ShareLink extends Component {
 		return <div class="shareSection">
 			<a onClick={ this.open.bind(this) } class="shareButton">share</a>
 			<div class={"shareBox "+(this.state.state == 'open'?"" : "hide")} onClick={this.boxClick.bind(this)}>
-				<h6>share a link to this</h6>
-				<input type="text" ref={(input) => { this.shareInput = input; }} className="shareLink"
-					   onClick={this.highlightAll.bind(this)}
-					   value={this.link}/>
-				<button class="goButton" onClick={this.goClick.bind(this)}>Go</button>
+				<div>
+					<h6>share a link to this</h6>
+					<input type="text" ref={(input) => { this.shareInput = input; }} className="shareLink"
+						   onClick={this.highlightAll.bind(this)}
+						   value={this.link}/>
+					<button class="goButton" onClick={this.goClick.bind(this)}>Go</button>
+				</div>
+				<div>
+					<a ref={(input) => { this.downloadLink = input; }} download="image.png" class="downloadImage" onClick={this.downloadImage.bind(this)}>
+						Download Image
+					</a>
+				</div>
 			</div>
-			<a ref={(input) => { this.downloadLink = input; }} download="image.png" class="downloadImage">
-				<button type="button" onClick={this.downloadImage.bind(this)}>Download Image</button>
-			</a>
 		</div>
 	}
 }
