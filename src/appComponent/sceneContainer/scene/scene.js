@@ -52,6 +52,10 @@ class Scene extends Component {
 		this.base.appendChild(renderCanvas);
 	}
 
+	captureImage() {
+		return RenderController.captureImage();
+	}
+
 	/**
 	 * render this component
 	 */

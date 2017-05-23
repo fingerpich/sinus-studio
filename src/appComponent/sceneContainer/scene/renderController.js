@@ -15,7 +15,7 @@ class RenderControllerClass {
 	 * @param {number} height canvas height
 	 */
 	setup(cameraControlAreaElement, width, height) {
-		this.renderer = new THREE.WebGLRenderer();
+		this.renderer = new THREE.WebGLRenderer({preserveDrawingBuffer : true});
 		this.renderer.setSize(width, height);
 
 		this.scene = new THREE.Scene();
@@ -27,6 +27,11 @@ class RenderControllerClass {
 		this.repeatRendering();
 
 		return this.renderer.domElement;
+	}
+
+	captureImage(){
+		this.renderer.render(this.scene, this.camera);
+		return this.renderer.domElement.toDataURL("image/png", 1);
 	}
 
 	/**

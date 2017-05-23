@@ -59,15 +59,21 @@ class ShareLink extends Component {
 		e.stopPropagation();
 	}
 
-
+	/**
+	 * goClick function
+	 */
 	goClick() {
 		this.props.goClick && this.props.goClick();
 	}
 
-	downloadImage(){
-		let image = document.getElementsByTagName("canvas")[0].toDataURL();
+	/**
+	 * downloadImage function
+	 */
+	downloadImage() {
+		let link = this.props.getLink();
+		let image = this.props.getImageData();
 		this.downloadLink.href = image;
-		this.downloadLink.download = "imagename";
+		this.downloadLink.download = link.split("?")[1];
 	}
 
 	/**
