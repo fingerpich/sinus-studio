@@ -1,5 +1,5 @@
 {
-  "name": "indulge-inner-child",
+  "name": "Spiro3D",
   "version": "1.0.0",
   "description": "Control a 3d spirograph in a web application",
   "main": "webpack-dev-server --inline --devtool source-map --content-base src/client --port 3000",
@@ -15,14 +15,11 @@
     "url": "git+https://github.com/fingerpich/spiro3d.git"
   },
   "keywords": [
+    "control",
     "spirograph",
-    "entertainment",
-    "math",
+    "3d",
     "animation",
-    "graphic",
-    "three.js",
-    "preact",
-    "redux"
+    "graphic"
   ],
   "author": "mojtaba zarei",
   "license": "ISC",
@@ -70,7 +67,6 @@
   "dependencies": {
     "preact": "^4.8.0",
     "preact-redux": "^1.0.1",
-    "react-ga": "^2.1.2",
     "redux": "^3.5.2",
     "three": "^0.84.0",
     "three-orbit-controls": "^82.1.0"

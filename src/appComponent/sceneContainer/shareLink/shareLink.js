@@ -71,8 +71,7 @@ class ShareLink extends Component {
 	 */
 	downloadImage() {
 		let link = this.props.getLink();
-		let image = this.props.getImageData();
-		this.downloadLink.href = image;
+		this.downloadLink.href = this.props.getImageData();
 		this.downloadLink.download = link.split("?")[1];
 	}
 
