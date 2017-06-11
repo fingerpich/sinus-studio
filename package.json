@@ -1,6 +1,6 @@
 {
   "name": "Spiro3D",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Control a 3d spirograph in a web application",
   "main": "webpack-dev-server --inline --devtool source-map --content-base src/client --port 3000",
   "scripts": {
