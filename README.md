@@ -8,11 +8,13 @@ The original US-released Spirograph consisted of two different-sized plastic rin
 **In this application you could have n rings which are rotated inside each other and also you could rotate them in three dimensions.**
 
 ## Examples
-
+click on every item you like to see. 
 [<img src="./examples/1.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW8VS3VC89449VPTXVQW8VS28VC1VPFXZVD2EZVD3EZXVOQAFVHFVGTVJ20VI20XX )
 [<img src="./examples/2.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW2VS20VC91700VPTXVQW10VS6VC656VPTXVQW10VS1VC249VPFXZVD2EZVD3EZXVOQAFVHFVGTVJ360VI360XX)
 [<img src="./examples/3.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW2VS20VC98799VPFXVQW10VS6VC2825VPTXVQW10VS1VC1520VPFXZVD2EQW10VS5VC614VPFXZVD3EZXVOQAFVHFVGTVJ360VI360XX)
 [<img src="./examples/0.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW7VS3VC98692VPFXVQW2VS73VC2484VPFXVQW16VS19VC1152VPTXZVD2EZVD3EZXVOQAFVHFVGTVJ360VI360XX)
 [<img src="./examples/4.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW7VS2VC469VPFXVQW24VS212VC17809VPTXZVD2EZVD3EZXVOQAFVHFVGTVI320VJ320XX)
+[<img src="./examples/animate RGB circles.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW10VS91VC57VPFXVQW7VS120VC10855VPTXZVD2EZVD3EZXVOQAFVHTVGTVI360VJ360XX)
+[<img src="./examples/infinite.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW10VS91VC48VPFXVQW7VS120VC30054VPTXZVD2EZVD3EZXVOQAFVHFVGTVI273VJ364XX)
 [<img src="./examples/QRQD1EQW16VS1VC469VPFXVQW3VS171VC90VPFXZVD2EZVD3EZXVOQAFVHFVGTVI229VJ320XX.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW16VS1VC469VPFXVQW3VS171VC90VPFXZVD2EZVD3EZXVOQAFVHFVGTVI29VJ320XX)
 [<img src="./examples/QRQD1EQW16VS3VC469VPFXVQW3VS165VC26456VPTXZVD2EZVD3EZXVOQAFVHFVGTVI320VJ320XX.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW16VS3VC469VPFXVQW3VS165VC3909VPTXZVD2EZVD3EZXVOQAFVHFVGTVI320VJ320XX)
