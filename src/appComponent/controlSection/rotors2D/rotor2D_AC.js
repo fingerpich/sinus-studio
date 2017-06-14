@@ -3,7 +3,7 @@
  * @param {string} label indicate add to which table
  */
 export const addDimension = (label)=> {
-	return {type: 'ADD_DIMENSION', data: {dimension: label}}
+	return {type: 'ADD_DIMENSION', data: {dimension: label}};
 };
 
 /**
@@ -11,7 +11,7 @@ export const addDimension = (label)=> {
  * @param {number} index
  */
 export const changeProperty = ({index, name, value, label})=> {
-	return {type: 'EDIT_DIMENSION', data: {index, name, value, dimension: label}}
+	return {type: 'EDIT_DIMENSION', data: {index, name, value, dimension: label}};
 };
 
 /**
@@ -20,5 +20,5 @@ export const changeProperty = ({index, name, value, label})=> {
  * @param {number} index
  */
 export const removeDimension = ({index, label})=> {
-	return {type: 'REMOVE_DIMENSION', data: {index, dimension: label}}
+	return {type: 'REMOVE_DIMENSION', data: {index, dimension: label}};
 };

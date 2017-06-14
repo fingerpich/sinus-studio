@@ -12,7 +12,7 @@ class Stepper extends Component {
 	 */
 	shouldComponentUpdate(props) {
 		if (!this.textInput) return true;//it needs to render the element again
-		if(props.value != this.value){
+		if (props.value !== this.value){
 			this.value = props.value;
 			this.textInput.value = this.value;
 		}
@@ -65,10 +65,10 @@ class Stepper extends Component {
 	 * start holding decrease button
 	 */
 	holdDown() {
-		this.timeoutObject=setTimeout(() => {
-				this.decrease();
-				this.holdDown();
-			},this.delay);
+		this.timeoutObject = setTimeout(() => {
+			this.decrease();
+			this.holdDown();
+		},this.delay);
 	}
 	/**
 	 * leave decrease buton
@@ -81,7 +81,7 @@ class Stepper extends Component {
 	 * change value on text changed
 	 */
 	onInputChange(e) {
-		this.value = parseInt(this.textInput.value || 0) || 0;
+		this.value = parseInt(this.textInput.value || 0, 10);
 		this.onChange();
 	}
 

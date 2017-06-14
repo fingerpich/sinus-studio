@@ -12,14 +12,18 @@ import {getUrlByState, setUrlByState} from '../../persistState.js';
  * @return {object} presentation element
  */
 class SceneContainer extends Component {
- render() {
-  return (
-	<div class="sceneContainer">
-		<ShareLink class="share" getLink={getUrlByState} goClick={setUrlByState} getImageData={()=>{return this.scene.captureImage();}} />
-		<Scene ref={instance => { this.scene = instance; }}/>
-	</div>
-  );
- }
+	render() {
+		return (
+			<div class="sceneContainer">
+				<ShareLink class="share" getLink={getUrlByState} goClick={setUrlByState} getImageData={() => {
+					return this.scene.captureImage();
+				}}/>
+				<Scene ref={instance => {
+					this.scene = instance;
+				}}/>
+			</div>
+		);
+	}
 }
 
 export default SceneContainer;

@@ -34,15 +34,15 @@ const ControlsSectionElement = ({options, onOptionChange, shareButtonClicked, on
 					</button>
 				</div>
 			</div>
-			<input checked={options.showAxes} type="checkbox" onChange={(e)=> {
-				onOptionChange("showAxes", e.target.checked)
+			<input checked={options.showAxes} type="checkbox" onChange={(e) => {
+				onOptionChange("showAxes", e.target.checked);
 			}
 			}/>
-			<input checked={options.hasHSL} type="checkbox" onChange={(e)=> {
-				onOptionChange("hasHSL", e.target.checked)
+			<input checked={options.hasHSL} type="checkbox" onChange={(e) => {
+				onOptionChange("hasHSL", e.target.checked);
 			}}/>
-			<input checked={options.showMoreControl} type="checkbox" onChange={(e)=> {
-				onOptionChange("showMoreControl", e.target.checked)
+			<input checked={options.showMoreControl} type="checkbox" onChange={(e) => {
+				onOptionChange("showMoreControl", e.target.checked);
 			}}/>
 		</div>
 	</div>

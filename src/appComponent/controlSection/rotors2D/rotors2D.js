@@ -32,7 +32,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 		onAddDimension: () => {
 			dispatch(addDimension(ownProps.label));
 		}
-	}
+	};
 };
 
 /**

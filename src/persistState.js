@@ -1,8 +1,5 @@
 import getStore from './initRedux.js';
 
-const checkState = (state) => {
-	return (state && state.rotorsData && state.rotorsData.xy);
-};
 /**
  * load last State
  * @return {object} saved state
@@ -35,7 +32,6 @@ export const loadState = () => {
 		}
 	}
 	return result? {...defaultState, ...result} : undefined;
-	// return checkState(result) ? result : undefined;
 };
 
 
@@ -56,7 +52,7 @@ const keyList=[
 	{key:"showMoreControl",zip:"G"},
 	{key:"xy",zip:"D1"},
 	{key:"yz",zip:"D2"},
-	{key:"xz",zip:"D3"},
+	{key:"xz",zip:"D3"}
 ];
 /**
  * some other character replacement which are not ok in url
@@ -68,19 +64,19 @@ const replaceList=[
 	{from:'}',to:'X'},
 	{from:'[',to:'E'},
 	{from:']',to:'Z'},
-	{from:',',to:'V'},
+	{from:',',to:'V'}
 ];
 /**
  * shortening url
  */
 const encodeURL = (state) => {
 	let zipUrl=JSON.stringify(sanitizeState(state));
-	for(var i=0;i<keyList.length;i++) {
+	for (let i=0;i<keyList.length;i++) {
 		zipUrl=zipUrl.replace(new RegExp('"'+keyList[i].key+'":',"g"),keyList[i].zip);
 	}
-	for(var j=0; j<replaceList.length; j++) {
-		var from=replaceList[j].from;
-		if(from.length<2)from="\\"+from;
+	for (let j=0; j<replaceList.length; j++) {
+		let from=replaceList[j].from;
+		if (from.length<2)from="\\"+from;
 		zipUrl=zipUrl.replace(new RegExp(from,"g"),replaceList[j].to);
 	}
 	zipUrl="?" + encodeURIComponent(zipUrl);
@@ -95,9 +91,9 @@ const sanitizeState = (state) => {
 			sanitizeState(sti);
 		}
 	}
-	else if(typeof(state)=='object') {
+	else if (typeof(state) === 'object') {
 		for (let [k, v] of Object.entries(state)) {
-			if (keyList.filter(x => x.key == k).length < 1) {
+			if (keyList.filter(x => x.key === k).length < 1) {
 				delete state[k];
 			}
 			sanitizeState(state[k]);

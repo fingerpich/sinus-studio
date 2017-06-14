@@ -10,4 +10,4 @@ const appReducers = combineReducers({
 	options: optionsReducer
 });
 
-export default appReducers
+export default appReducers;

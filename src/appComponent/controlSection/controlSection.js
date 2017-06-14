@@ -1,7 +1,7 @@
 import {h, Component} from 'preact';
 import {connect} from 'preact-redux';
 import getStore from '../../initRedux.js';
-import ControlsSectionElement from './controlSectionElement'
+import ControlsSectionElement from './controlSectionElement';
 
 /**
  * get options from global state
@@ -12,17 +12,17 @@ let timeoutVar;
 const store = getStore();
 const mapStateToProps = (state, ownProps) => {
 	if (state.options.isPlayDrawing && !timeoutVar) {
-		timeoutVar=setTimeout(()=> {
-			timeoutVar=0;
+		timeoutVar = setTimeout(() => {
+			timeoutVar = 0;
 			let state = store.getState();
-			let value=parseInt(state.options.progressedSteps || 0);
-			value=value>state.options.steps?0:value+1;
+			let value = parseInt(state.options.progressedSteps, 10) || 0;
+			value = (value > state.options.steps) ? 0 : value + 1;
 			store.dispatch({type: 'CHANGE_OPTIONS', data: {name:'progressedSteps', value}});
 		}, 10);
 	}
 	return {
-		options: state.options,
-	}
+		options: state.options
+	};
 };
 
 /**
@@ -36,17 +36,17 @@ const mapDispatchToProps = (dispatch, ownProps ) => {
 			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
 		},
 		onProgressedStepsChange: (name,value,steps) => {
-			if(value>steps)value=0;
-			if(value<0)value=steps;
+			if (value>steps)value = 0;
+			if (value<0)value = steps;
 			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
 		},
 		onSwitchPlayDrawing: (isPlaying) => {
-			dispatch({type: 'CHANGE_OPTIONS', data: {name:'isPlayDrawing', value:!isPlaying}});
+			dispatch({type: 'CHANGE_OPTIONS', data: {name: 'isPlayDrawing', value: !isPlaying}});
 		},
 		onResetDrawing: (steps) => {
-			dispatch({type: 'CHANGE_OPTIONS', data: {name:'progressedSteps', value:steps}});
+			dispatch({type: 'CHANGE_OPTIONS', data: {name: 'progressedSteps', value: steps}});
 		}
-	}
+	};
 };
 
 /**
@@ -59,5 +59,5 @@ const ControlsSectionContainer = connect(
 )(ControlsSectionElement);
 
 
-export default ControlsSectionContainer
+export default ControlsSectionContainer;
 
