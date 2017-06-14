@@ -9,8 +9,8 @@ import RotorElement from './rotorElement.js';
 const mapStateToProps = (state, ownProps) => {
 	if (ownProps.isPlaying) {
 		setTimeout(()=> {
-			ownProps.onChange({name: "start", value: parseInt(ownProps.start) + 1});
-		}, 10);
+			ownProps.onChange({name: "start", value: parseInt(ownProps.start, 10) + 1});
+		}, 33);
 	}
 	return {...state.dimension};
 };
@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 		onSwitchPlay: () => {
 			ownProps.onChange({name: 'isPlaying', value: !ownProps.isPlaying});
 		}
-	}
+	};
 };
 
 /**

@@ -9,9 +9,9 @@ import * as THREE from 'three';
 const calcDimension = (dimensionData, time) => {
 	let value = [0, 0];
 	for (let di of dimensionData) {
-		const width = parseInt(di.width);
-		const start = parseInt(di.start);
-		const step = parseInt(di.step);
+		const width = parseInt(di.width, 10);
+		const start = parseInt(di.start, 10);
+		const step = parseInt(di.step, 10);
 		value[0] += Math.cos((start + time * step) / 180 * Math.PI) * width;
 		value[1] += Math.sin((start + time * step) / 180 * Math.PI) * width;
 	}
@@ -21,7 +21,7 @@ const calcDimension = (dimensionData, time) => {
 const pointsColor=[];
 let hasPreviousHSL=false;
 const getPointsColor = (vertexCount,hasHSL) => {
-	if ((vertexCount != pointsColor.length) || (hasHSL!=hasPreviousHSL)){
+	if ((vertexCount !== pointsColor.length) || (hasHSL !== hasPreviousHSL)){
 		hasPreviousHSL=hasHSL;
 		while (pointsColor.length)pointsColor.pop();
 
@@ -63,7 +63,7 @@ const MakeSpline = (data) => {
 	const material = new THREE.LineBasicMaterial({
 		color: 0xffffff,
 		opacity: 1,
-		linewidth: 2,
+		linewidth: 1,
 		vertexColors: THREE.VertexColors
 	});
 	const line = new THREE.Line(spline, material);

@@ -156,9 +156,8 @@ class RenderControllerClass {
 				this.cameraHasChanged = false;
 			}
 		}
-		const thisObj = this;
-		requestAnimationFrame(function () {
-			thisObj.repeatRendering();
+		requestAnimationFrame(() => {
+			this.repeatRendering();
 		});
 	}
 }
