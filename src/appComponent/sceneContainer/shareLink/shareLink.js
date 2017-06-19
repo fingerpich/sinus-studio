@@ -83,8 +83,8 @@ class ShareLink extends Component {
 	render(props, state) {
 		return <div class="shareSection">
 			<a onClick={ this.open.bind(this) } class="shareButton">share</a>
-			<div class={"shareBox "+(this.state.state == 'open'?"" : "hide")} onClick={this.boxClick.bind(this)}>
-				<h6>share a link to this</h6>
+			<div class={"shareBox "+(this.state.state === 'open'?"" : "hide")} onClick={this.boxClick.bind(this)}>
+				<h6>Copy the link</h6>
 				<div class="shareForm">
 					<input type="text" ref={(input) => { this.shareInput = input; }} className="shareLink"
 						   onClick={this.highlightAll.bind(this)}
@@ -93,7 +93,7 @@ class ShareLink extends Component {
 				</div>
 				<div>
 					<a href="download image" ref={(input) => { this.downloadLink = input; }} download="image.png" class="downloadImage" onClick={this.downloadImage.bind(this)}>
-						Download As Image
+						Capture Image
 					</a>
 				</div>
 			</div>

@@ -1,23 +1,27 @@
 .shareBox{
   border: 1px solid #777;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 3px;
   padding: 10px;
   //box-shadow: 0 0 30px #999;
   position: absolute;
   width: 220px;
+  transition:opacity 0.3s ease;
+  opacity: 1;
+  box-shadow: 0 0 5px #fff;
   .downloadImage{
-	border: 0;
-	background: 0;
-	color: #07f;
+	text-decoration: none;
 	width: 100%;
-	margin: 10px 0 0;
-	padding: 0;
-	outline:none;
-	display:block;
-	text-align: left;
+	outline: none;
+	background: #252525;
+	color:#fff;
+	display: block;
+	text-align: center;
+	padding: 7px 0;
+	margin: 40px 0 0;
   }
   h6{
-	color:#fff;
+	color:#999;
 	padding:3px;
 	font-size:0.75rem;
 	direction: ltr;
@@ -29,19 +33,21 @@
 	input{
 	  flex:1 1 auto;
 	  padding:10px 5px;
-	  background:#eee;
+	  background:#fff;
+	  color:#333;
 	  border:none;
 	}
 	.goButton{
 	  flex:50px;
 	  padding: 10px;
-	  background: #0493f9;
+	  background: #252525;
+	  color:#fff;
 	  border: 0;
 	}
   }
 
   &.hide{
-	display: none;
+	opacity: 0;
   }
 }
 
