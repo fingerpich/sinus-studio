@@ -43,6 +43,7 @@ const keyList=[
 	{key:"width",zip:"W"},
 	{key:"step",zip:"S"},
 	{key:"start",zip:"C"},
+	{key:"isPlayDrawing",zip:"B1"},
 	{key:"isPlaying",zip:"P"},
 	{key:"options",zip:"O"},
 	{key:"hasHSL",zip:"H"},
@@ -124,8 +125,12 @@ export const setUrlByState = () => {
 	window.location.search = encodeURL(state);
 };
 export const getUrlByState = () => {
-	const state = getStore().getState();
-	return window.location.href.split('?')[0] + encodeURL(state);
+	const state = getStore()
+		.getState();
+	let output = window.location.href.split('?')[0];
+	output += encodeURL(state);
+	// return window.location.href.split('?')[0] + encodeURL(state);
+	return output;
 };
 
 /**

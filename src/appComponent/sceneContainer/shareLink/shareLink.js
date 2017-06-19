@@ -22,9 +22,9 @@ class ShareLink extends Component {
 	componentDidMount() {
 		this.highlightAll();
 		window.onclick =(e)=>{
-			if(this.state.state=='open')
+			if (this.state.state === 'open')
 				this.close();
-		}
+		};
 	}
 
 	boxClick(e) {
@@ -38,7 +38,7 @@ class ShareLink extends Component {
 		setTimeout(()=>{
 			this.shareInput.setSelectionRange(0, this.shareInput.value.length);
 			this.shareInput.select();
-		},300)
+		},300);
 	}
 	/**
 	 * close the share link win
@@ -97,7 +97,7 @@ class ShareLink extends Component {
 					</a>
 				</div>
 			</div>
-		</div>
+		</div>;
 	}
 }
 export default ShareLink;
