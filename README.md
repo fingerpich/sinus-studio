@@ -21,4 +21,4 @@ click on items to see their animations or change them to whatever you like.
 [<img src="./examples/rose.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW3VS91VC175VPFXVQW7VS7VC57649VPTXZVD2EZVD3EZXVOQAFVHFVGTVI360VJ360XX)
 [<img src="./examples/fencing.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW16VS3VC469VPFXVQW3VS165VC3909VPTXZVD2EZVD3EZXVOQAFVHFVGTVI320VJ320XX)
 [<img src="./examples/fence drawing.png" width="100">](https://fingerpich.github.io/spiro3d/?QRQD1EQW16VS1VC469VPFXVQW3VS171VC90VPFXZVD2EZVD3EZXVOQAFVHFVGTVI29VJ320XX)
-[<img src="./examples/infinite drawing.png" width="100">](http://localhost:8080/?QRQD1EQW10VS11VC146217VPFXZVD2EQW10VS6VC2190VPFXZVD3EQW10VS5VC14658VPTXZXVOQAFVHFVGTVJ360VI261VB1TXX)
+[<img src="./examples/motion signature.png" width="100">](http://localhost:8080/?QRQD1EQW10VS11VC146217VPFXZVD2EQW10VS6VC2190VPFXZVD3EQW10VS5VC14658VPTXZXVOQAFVHFVGTVJ360VI261VBTXX)

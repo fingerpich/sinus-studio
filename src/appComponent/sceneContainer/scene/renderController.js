@@ -148,17 +148,15 @@ class RenderControllerClass {
 		if (this.curState) {
 			if (this.stateHasChanged) {
 				this.rebuildSpline(this.curState);
-				this.rerender();
+				requestAnimationFrame(() => {this.rerender();});
 				this.stateHasChanged=false;
 			}
 			if (this.cameraHasChanged) {
-				this.rerender();
+				requestAnimationFrame(() => {this.rerender();});
 				this.cameraHasChanged = false;
 			}
 		}
-		requestAnimationFrame(() => {
-			this.repeatRendering();
-		});
+		setTimeout( () => {this.repeatRendering();}, 15);
 	}
 }
 

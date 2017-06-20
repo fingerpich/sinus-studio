@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
 	if (ownProps.isPlaying) {
 		setTimeout(()=> {
 			ownProps.onChange({name: "start", value: parseInt(ownProps.start, 10) + 1});
-		}, 33);
+		}, 5);
 	}
 	return {...state.dimension};
 };

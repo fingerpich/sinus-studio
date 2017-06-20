@@ -18,9 +18,7 @@ class SceneContainer extends Component {
 				<ShareLink class="share" getLink={getUrlByState} goClick={setUrlByState} getImageData={() => {
 					return this.scene.captureImage();
 				}}/>
-				<Scene ref={instance => {
-					this.scene = instance;
-				}}/>
+				<Scene ref={instance => { this.scene = instance; }}/>
 			</div>
 		);
 	}

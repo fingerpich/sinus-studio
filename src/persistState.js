@@ -38,49 +38,51 @@ export const loadState = () => {
 /**
  * short name for some key in json
  */
-const keyList=[
-	{key:"rotorsData",zip:"R"},
-	{key:"width",zip:"W"},
-	{key:"step",zip:"S"},
-	{key:"start",zip:"C"},
-	{key:"isPlayDrawing",zip:"B1"},
-	{key:"isPlaying",zip:"P"},
-	{key:"options",zip:"O"},
-	{key:"hasHSL",zip:"H"},
-	{key:"showAxes",zip:"A"},
-	{key:"progressedSteps",zip:"I"},
-	{key:"steps",zip:"J"},
-	{key:"showMoreControl",zip:"G"},
-	{key:"xy",zip:"D1"},
-	{key:"yz",zip:"D2"},
-	{key:"xz",zip:"D3"}
+const keyList = [
+	{key : "width", zip : "W"},
+	{key : "step", zip : "S"},
+	{key : "start", zip : "C"},
+	{key : "options", zip : "O"},
+	{key : "steps", zip : "J"},
+	{key : "xy", zip : "D1"},
+	{key : "yz", zip : "D2"},
+	{key : "xz", zip : "D3"},
+	{key : "rotorsData", zip : "R"},
+	{key : "showAxes", zip : "A"},
+	{key : "hasHSL", zip : "H"},
+	{key : "progressedSteps", zip : "I"},
+	{key : "showMoreControl", zip : "G"},
+	{key : "isPlaying", zip : "P"},
+	{key : "isPlayDrawing", zip : "B"},
 ];
 /**
  * some other character replacement which are not ok in url
  */
 const replaceList=[
-	{from:'true',to:'T'},
-	{from:'false',to:'F'},
-	{from:'{',to:'Q'},
-	{from:'}',to:'X'},
-	{from:'[',to:'E'},
-	{from:']',to:'Z'},
-	{from:',',to:'V'}
+	{from : 'true', to : 'T'},
+	{from : 'false', to : 'F'},
+	{from : '{', to : 'Q'},
+	{from : '}', to : 'X'},
+	{from : '[', to : 'E'},
+	{from : ']', to : 'Z'},
+	{from : ',', to : 'V'}
 ];
 /**
  * shortening url
  */
 const encodeURL = (state) => {
 	let zipUrl=JSON.stringify(sanitizeState(state));
-	for (let i=0;i<keyList.length;i++) {
+	for (let i = 0; i < keyList.length; i++) {
 		zipUrl=zipUrl.replace(new RegExp('"'+keyList[i].key+'":',"g"),keyList[i].zip);
 	}
 	for (let j=0; j<replaceList.length; j++) {
-		let from=replaceList[j].from;
-		if (from.length<2)from="\\"+from;
-		zipUrl=zipUrl.replace(new RegExp(from,"g"),replaceList[j].to);
+		let from = replaceList[j].from;
+		if (from.length < 2) {
+			from = "\\" + from;
+		}
+		zipUrl = zipUrl.replace(new RegExp(from,"g"),replaceList[j].to);
 	}
-	zipUrl="?" + encodeURIComponent(zipUrl);
+	zipUrl = "?" + encodeURIComponent(zipUrl);
 	return zipUrl;
 };
 const isArray = (data) => {
@@ -106,9 +108,11 @@ const sanitizeState = (state) => {
  * decode url
  */
 const decodeURL = (url) => {
-	let decodedUrl = decodeURIComponent(url.slice(1));
+	let url = decodeURIComponent(url.slice(1));
+	let decodedUrl = "";
+	let st = "";
 	for (let item of replaceList) {
-		decodedUrl = decodedUrl.replace(new RegExp(item.to, "g"), item.from);
+		url = url.replace(new RegExp(item.to, "g"), item.from);
 	}
 	for (let item of keyList) {
 		decodedUrl = decodedUrl.replace(new RegExp(item.zip, "g"), '"' + item.key + '":');
