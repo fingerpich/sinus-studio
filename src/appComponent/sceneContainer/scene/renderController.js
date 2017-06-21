@@ -125,8 +125,26 @@ class RenderControllerClass {
 	 * it will call back on control changes
 	 */
 	onStateChange(newState) {
-		this.curState = newState;
-		this.stateHasChanged=true;
+		this.stateHasChanged = true;
+		if(this.curState) {
+			for (let dimension in newState.rotorsData) {
+				for (let i of newState.rotorsData[dimension]) {
+					const rotorData = newState.rotorsData[dimension][i];
+					if (rotorData.isPlaying) {
+						const prevRotorsData = this.curState.rotorsData;
+						if (prevRotorsData &&
+							prevRotorsData[dimension] &&
+							prevRotorsData[dimension][i] &&
+							prevRotorsData[dimension][i].step === rotorData.step) {
+							this.stateHasChanged = false;
+						}
+					}
+				}
+			}
+		}
+		if (this.stateHasChanged) {
+			this.curState = newState;
+		}
 	}
 
 	/**
@@ -156,7 +174,7 @@ class RenderControllerClass {
 				this.cameraHasChanged = false;
 			}
 		}
-		setTimeout( () => {this.repeatRendering();}, 15);
+		setTimeout( () => {this.repeatRendering();}, 5);
 	}
 }
 
