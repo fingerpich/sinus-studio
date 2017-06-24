@@ -108,7 +108,7 @@ const sanitizeState = (state) => {
  * decode url
  */
 const decodeURL = (url) => {
-	let url = decodeURIComponent(url.slice(1));
+	url = decodeURIComponent(url.slice(1));
 	let decodedUrl = "";
 	let st = "";
 	for (let item of replaceList) {
