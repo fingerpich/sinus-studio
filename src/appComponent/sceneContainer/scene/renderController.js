@@ -126,22 +126,22 @@ class RenderControllerClass {
 	 */
 	onStateChange(newState) {
 		this.stateHasChanged = true;
-		if(this.curState) {
-			for (let dimension in newState.rotorsData) {
-				for (let i of newState.rotorsData[dimension]) {
-					const rotorData = newState.rotorsData[dimension][i];
-					if (rotorData.isPlaying) {
-						const prevRotorsData = this.curState.rotorsData;
-						if (prevRotorsData &&
-							prevRotorsData[dimension] &&
-							prevRotorsData[dimension][i] &&
-							prevRotorsData[dimension][i].step === rotorData.step) {
-							this.stateHasChanged = false;
-						}
-					}
-				}
-			}
-		}
+		// if(this.curState && this.curState !== newState) {
+		// 	for (let dimension in newState.rotorsData) {
+		// 		for (let i = 0; i<newState.rotorsData[dimension].length; i++) {
+		// 			const rotorData = newState.rotorsData[dimension][i];
+		// 			if (rotorData.isPlaying) {
+		// 				const prevRotorsData = this.curState.rotorsData;
+		// 				if (prevRotorsData &&
+		// 					prevRotorsData[dimension] &&
+		// 					prevRotorsData[dimension][i] &&
+		// 					prevRotorsData[dimension][i].start === rotorData.start) {
+		// 					this.stateHasChanged = false;
+		// 				}
+		// 			}
+		// 		}
+		// 	}
+		// }
 		if (this.stateHasChanged) {
 			this.curState = newState;
 		}
