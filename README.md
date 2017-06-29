@@ -28,3 +28,4 @@ click on items to see their animations or change them to whatever you like.
 [<img src="./examples/fence drawing.png" width="100">](https://fingerpich.github.io/sinus-studio/?QRQD1EQW16VS1VC469VPFXVQW3VS171VC90VPFXZVD2EZVD3EZXVOQAFVHFVGTVI29VJ320XX)
 [<img src="./examples/motion signature.png" width="100">](https://fingerpich.github.io/sinus-studio/?QRQD1EQW10VS11VC146217VPFXZVD2EQW10VS6VC2190VPFXZVD3EQW10VS5VC14658VPTXZXVOQAFVHFVGTVJ360VI261VBTXX)
 [<img src="./examples/rotate cubes.png" width="100">](https://fingerpich.github.io/sinus-studio/?QRQD1EQW10VS11VC189VPFXVQW10VS40VC41425VPTXZVD2EZVD3EZXVOQAFVHFVGTVI360VJ360VBFXX)
+[<img src="./examples/guess how it will complete.png" width="100">](https://fingerpich.github.io/sinus-studio/?QRQD1EQW10VS47VC3411VPTXVQW2VS187VC3599VPFXVQW7VS1VC3604VPFXZVD2EZVD3EZXVOQAFVHFVGTVI1571VJ3600VBTXX)
