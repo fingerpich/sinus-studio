@@ -1,8 +1,8 @@
 {
-  "name": "Spiro3D",
+  "name": "sinus-studio",
   "version": "1.1.1",
-  "description": "Control a 3d spirograph in a web application",
-  "main": "webpack-dev-server --inline --devtool source-map --content-base src/client --port 3000",
+  "description": "Draws and animates a 3D spirograph-like curves",
+  "main": "webpack-dev-server --inline --devtool source-map --content-base src/client --port 8080",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress --o",
     "start": "npm run dev",
