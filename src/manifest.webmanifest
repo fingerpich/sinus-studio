@@ -1,10 +1,10 @@
 {
-  "name": "Spiro3D",
-  "short_name": "Spiro3D",
+  "name": "SinusStudio",
+  "short_name": "SinusStudio",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#222",
-  "description": "A simply 3d spirograph maker.",
+  "description": "Draws and animates a sinusoidal curve.",
   "icons": [{
 	"src": "./icons/android-chrome-48x48.png",
 	"sizes": "48x48",

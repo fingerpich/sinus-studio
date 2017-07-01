@@ -71,19 +71,22 @@ const replaceList=[
  * shortening url
  */
 const encodeURL = (state) => {
-	let zipUrl=JSON.stringify(sanitizeState(state));
-	for (let i = 0; i < keyList.length; i++) {
-		zipUrl=zipUrl.replace(new RegExp('"'+keyList[i].key+'":',"g"),keyList[i].zip);
+	let enstate = sanitizeState(state);
+	const result = [[],[]];
+	for (let dimension in enstate.rotorsData) {
+		result[0].push(enstate.rotorsData[dimension].map((roullette)=>{
+			return [roullette.isPlaying ? 0 : roullette.start, roullette.step, roullette.width, (roullette.isPlaying ? 1 : 0)];
+		}));
 	}
+	const options = enstate.options;
+	result[1] = [options.showAxes?1:0, options.hasHSL?1:0, options.showMoreControl?1:0, options.progressedSteps, options.steps, options.isPlayDrawing?1:0]
+
+	let str = JSON.stringify(result);
 	for (let j=0; j<replaceList.length; j++) {
-		let from = replaceList[j].from;
-		if (from.length < 2) {
-			from = "\\" + from;
-		}
-		zipUrl = zipUrl.replace(new RegExp(from,"g"),replaceList[j].to);
+		const from = replaceList[j].from.length < 2 ? ("\\" + replaceList[j].from) : replaceList[j].from;
+		str = str.replace(new RegExp(from,"g"),replaceList[j].to);
 	}
-	zipUrl = "?" + encodeURIComponent(zipUrl);
-	return zipUrl;
+	return str;
 };
 const isArray = (data) => {
 	return (Object.prototype.toString.call(data) === "[object Array]");
@@ -108,16 +111,28 @@ const sanitizeState = (state) => {
  * decode url
  */
 const decodeURL = (url) => {
-	let decodedUrl = decodeURIComponent(url.slice(1));
-	let st = "";
+	url = decodeURIComponent(url.slice(1));
 	for (let item of replaceList) {
-		decodedUrl = decodedUrl.replace(new RegExp(item.to, "g"), item.from);
+		url = url.replace(new RegExp(item.to, "g"), item.from);
 	}
-	for (let item of keyList) {
-		decodedUrl = decodedUrl.replace(new RegExp(item.zip, "g"), '"' + item.key + '":');
-	}
-	let state = JSON.parse(decodedUrl);
-	return sanitizeState(state);
+	let stateObj = JSON.parse(url);
+	const result = {};
+	const arr = stateObj[0].map((dimension) => {
+		return dimension.map((roullete) => {
+			return {start:roullete[0], step:roullete[1], width:roullete[2], isPlaying:roullete[3]};
+		});
+	});
+	result.rotorsData = {xy: arr[0], yz: arr[1], xz: arr[2]};
+
+	result.options = {
+		showAxes: stateObj[1][0],
+		hasHSL: stateObj[1][1],
+		showMoreControl: stateObj[1][2],
+		progressedSteps: stateObj[1][3],
+		steps: stateObj[1][4],
+		isPlayDrawing: stateObj[1][5]
+	};
+	return result;
 };
 
 /**

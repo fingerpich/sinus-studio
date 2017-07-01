@@ -4,7 +4,7 @@
 /**
  * reducer changes store by action
  */
-export default (optionState = {showAxes: false, hasHSL: false, showMoreControl: false, progressedSteps: 360, steps: 360}, action) => {
+export default (optionState = {showAxes: false, hasHSL: false, showMoreControl: false, progressedSteps: 360, steps: 360, isPlayDrawing:false}, action) => {
 	switch (action.type) {
 		case 'CHANGE_OPTIONS':
 			return changeOption(optionState, action);

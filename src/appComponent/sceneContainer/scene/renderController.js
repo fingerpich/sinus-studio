@@ -126,9 +126,9 @@ class RenderControllerClass {
 	 */
 	onStateChange(newState) {
 		this.stateHasChanged = true;
-		// if(this.curState && this.curState !== newState) {
+		// if(this.curState) {
 		// 	for (let dimension in newState.rotorsData) {
-		// 		for (let i = 0; i<newState.rotorsData[dimension].length; i++) {
+		// 		for (let i of newState.rotorsData[dimension]) {
 		// 			const rotorData = newState.rotorsData[dimension][i];
 		// 			if (rotorData.isPlaying) {
 		// 				const prevRotorsData = this.curState.rotorsData;
