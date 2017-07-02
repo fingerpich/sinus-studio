@@ -17,8 +17,12 @@ class RenderControllerClass {
 	setup(cameraControlAreaElement, width, height) {
 		this.renderer = new THREE.WebGLRenderer({preserveDrawingBuffer : true});
 		this.renderer.setSize(width, height);
+		this.renderer.setClearColor(0x222222, 1);
 
 		this.scene = new THREE.Scene();
+		this.scene.background = new THREE.Color( 0x222222 );
+
+		this.renderer.clear();
 
 		this.addCamera(cameraControlAreaElement);
 		this.addLights();
@@ -38,15 +42,13 @@ class RenderControllerClass {
 	 * Make lights
 	 */
 	addLights() {
-		let light = new THREE.PointLight(0xFF0000, 1, 100);
-		light.position.set(10, 0, 10);
-		this.scene.add(light);
-
-		light = new THREE.PointLight(0xFF0000, 1, 50);
-		light.position.set(-20, 15, 10);
-		this.scene.add(light);
-
-		this.renderer.setClearColor(0x222222, 1);
+		// let light = new THREE.PointLight(0xFF0000, 1, 100);
+		// light.position.set(10, 0, 10);
+		// this.scene.add(light);
+        //
+        // light = new THREE.PointLight(0xFF0000, 1, 50);
+        // light.position.set(-20, 15, 10);
+        // this.scene.add(light);
 	}
 
 	/**
