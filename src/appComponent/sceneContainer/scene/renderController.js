@@ -137,7 +137,7 @@ class RenderControllerClass {
 		// 				if (prevRotorsData &&
 		// 					prevRotorsData[dimension] &&
 		// 					prevRotorsData[dimension][i] &&
-		// 					prevRotorsData[dimension][i].step === rotorData.step) {
+		// 					prevRotorsData[dimension][i].start === rotorData.start) {
 		// 					this.stateHasChanged = false;
 		// 				}
 		// 			}
