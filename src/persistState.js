@@ -9,10 +9,11 @@ const defaultState= {
 	"options": {"showAxes": false, "hasHSL": false, "showMoreControl": false, "progressedSteps": 360, "steps": 360}
 };
 export const loadState = () => {
-	const url = document.location.pathname;
+	const url = window.location.search;
 	let result = 0;
 	if (url.length > 10) {
 		try {
+			const url = window.location.search;
 			result = decodeURL(url);
 
 		} catch (e) {
