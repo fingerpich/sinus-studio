@@ -1,7 +1,7 @@
 # Sinus Studio
 
 Draws and animates a 3d spirograph-like curves using webGL.
-[DEMO](https://fingerpich.github.io/sinus-studio/?QRQD1EQW2VS20VC1VPFqVQW10VS6VC1VPFqVQW10VS1VC54VPTqeVD2EQW10VS5VC1VPFqeVD3EeqVOQAFVHTqq)
+[DEMO](https://fingerpich.github.io/sinus-studio/?EEEE0V3V8V1ZVE1V28V8V0ZZVEZVEZZVE0V0V1V20V20V0ZZ)
 
 ## Introduction
 
