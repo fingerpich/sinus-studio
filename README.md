@@ -20,6 +20,7 @@ Draws and animates a 3d spirograph-like curves using webGL.
 [<img src="./examples/guess how it will complete.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE0V47V10V1ZVE3599V187V2V0ZVE3604V1V7V0ZZVEZVEZZVE0V0V1V74V3600V1ZZ)
 [<img src="./examples/pool.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE706V10V13V0ZVE3850V206V1V0ZVE0V21V10V1ZZVEZVEZZVE0V0V1V320V320V0ZZ)
 [<img src="./examples/twisting rose.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE372V84V6V0ZVE0V7V3V1ZVE1472V14V18V0ZZVEZVEZZVE0V0V1V360V360V0ZZ)
+[<img src="./examples/triangle_completion.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE1419V105V10V0ZVE0V157V7V1ZZVEZVEZZVE0V0V1V327V419V1ZZ)
 
 ## Introduction
 
