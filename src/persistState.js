@@ -145,7 +145,7 @@ export const getUrlByState = () => {
 	const state = getStore()
 		.getState();
 	let output = window.location.href.split('?')[0];
-	output += encodeURL(state);
+	output += "?"+encodeURL(state);
 	// return window.location.href.split('?')[0] + encodeURL(state);
 	return output;
 };
