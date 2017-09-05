@@ -23,6 +23,7 @@ Click on them
 [<img src="./examples/twisting rose.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE372V84V6V0ZVE0V7V3V1ZVE1472V14V18V0ZZVEZVEZZVE0V0V1V360V360V0ZZ)
 [<img src="./examples/triangle_completion.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE1419V105V10V0ZVE0V157V7V1ZZVEZVEZZVE0V0V1V327V419V1ZZ)
 [<img src="./examples/gravity.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE0V91V4V1ZVE64939V20V10V0ZVE0V11V2V1ZZVEZVEZZVE0V0V1V3600V3600V0ZZ)
+[<img src="./examples/order and chaos.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE98V1V13V0ZVE0V148V12V1ZZVEZVEZZVE0V0V1V1000V900V0ZZ)
 
 ## Introduction
 
