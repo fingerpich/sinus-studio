@@ -24,6 +24,7 @@ Click on them
 [<img src="./examples/triangle_completion.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE1419V105V10V0ZVE0V157V7V1ZZVEZVEZZVE0V0V1V327V419V1ZZ)
 [<img src="./examples/gravity.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE0V91V4V1ZVE64939V20V10V0ZVE0V11V2V1ZZVEZVEZZVE0V0V1V3600V3600V0ZZ)
 [<img src="./examples/order and chaos.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE98V1V13V0ZVE0V148V12V1ZZVEZVEZZVE0V0V1V1000V900V0ZZ)
+[<img src="./examples/cloud.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE0V1V19V0ZVE0V173V3V1ZZVEE145V5V6V0ZVE0V2V5V1ZZVEZZVE0V0V1V320V320V0ZZ)
 
 ## Introduction
 
