@@ -25,6 +25,7 @@ Click on them
 [<img src="./examples/gravity.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE0V91V4V1ZVE64939V20V10V0ZVE0V11V2V1ZZVEZVEZZVE0V0V1V3600V3600V0ZZ)
 [<img src="./examples/order and chaos.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE98V1V13V0ZVE0V148V12V1ZZVEZVEZZVE0V0V1V1000V900V0ZZ)
 [<img src="./examples/cloud.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE0V1V19V0ZVE0V173V3V1ZZVEE145V5V6V0ZVE0V2V5V1ZZVEZZVE0V0V1V320V320V0ZZ)
+[<img src="./examples/rotating squars.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE440V89V3V0ZVE61480V2V5V0ZVE0V92V8V1ZZVEZVEZZVE0V0V1V60V360V0ZZ)
 
 ## Introduction
 
