@@ -31,6 +31,7 @@ Click on them
 [<img src="./examples/diafragma.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE5441V14V16V0ZVE0V168V3V1ZVE0V97V13V1ZZVEZVEZZVE0V0V1V320V320V0ZZ)
 [<img src="./examples/hypnotism.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE831V89V3V0ZVE67558V87V5V0ZVE0V93V7V1ZZVEZVEZZVE0V0V1V360V360V0ZZ)
 [<img src="./examples/circles.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE1750V186V10V0ZVE2820V188V6V0ZVE90V182V10V0ZZVEZVEZZVE0V0V1V270V5001V1ZZ)
+[<img src="./examples/star5.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE6425V26V9V0ZVE0V31V8V1ZZVEZVEZZVE0V0V1V20V20V0ZZ)
 
 ## Introduction
 
