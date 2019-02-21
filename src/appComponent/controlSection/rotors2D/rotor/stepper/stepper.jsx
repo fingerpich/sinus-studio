@@ -11,8 +11,8 @@ class Stepper extends Component {
 	 * @param {object} props
 	 */
 	shouldComponentUpdate(props) {
-		if (!this.textInput) return true;//it needs to render the element again
-		if (props.value !== this.value){
+		if (!this.textInput) return true; //it needs to render the element again
+		if (props.value !== this.value) {
 			this.value = props.value;
 			this.textInput.value = this.value;
 		}
@@ -24,7 +24,12 @@ class Stepper extends Component {
 	 */
 	componentWillMount() {
 		this.value = this.props.value || 0;
-		this.textInput.value = this.value;
+	}
+
+	componentDidMount() {
+		if (this.textInput) {
+			this.textInput.value = this.value;
+		}
 	}
 
 	value = 0;
@@ -93,7 +98,7 @@ class Stepper extends Component {
 		if (this.textInput) {
 			this.textInput.value = this.value;
 			if (this.props.onChange) {
-				this.props.onChange(this.props.name, this.value);
+				this.props.onChange(this.value);
 			}
 		}
 	}

@@ -2,7 +2,7 @@ import {h, render} from 'preact';
 import getStore from './initRedux.js';
 import {Provider} from 'preact-redux';
 
-import AppComponent from './appComponent/appComponent.js';
+import AppComponent from './appComponent/appComponent.jsx';
 import './index.less';
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

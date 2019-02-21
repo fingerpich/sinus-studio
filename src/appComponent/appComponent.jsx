@@ -1,7 +1,7 @@
 import {h} from 'preact';
 
 import ControlsSectionContainer from './controlSection/controlSection.js';
-import SceneContainer from './sceneContainer/sceneContainer.js';
+import SceneContainer from './sceneContainer/sceneContainer.jsx';
 /**
  * show all element
  * @return {object} presentation element

@@ -2,8 +2,8 @@
  * Created by mojtaba on 1/27/2017.
  */
 import {h, render, Component} from 'preact';
-import Scene from './scene/scene.js';
-import ShareLink from './shareLink/shareLink.js';
+import Scene from './scene/scene.jsx';
+import ShareLink from './shareLink/shareLink.jsx';
 import './sceneContainer.less';
 import {getUrlByState, setUrlByState} from '../../persistState.js';
 

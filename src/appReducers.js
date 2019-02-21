@@ -1,6 +1,6 @@
-import {combineReducers} from 'redux'
-import rotorsReducer from './appComponent/controlSection/rotors2D/rotorsReducer.js'
-import optionsReducer from './appComponent/controlSection/optionReducer'
+import {combineReducers} from 'redux';
+import rotorsReducer from './appComponent/controlSection/rotors2D/rotorsReducer.js';
+import optionsReducer from './appComponent/controlSection/optionReducer';
 
 /**
  * combine all reducers so you can use them where ever we want

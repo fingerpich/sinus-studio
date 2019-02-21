@@ -2,7 +2,7 @@ import {h, Component} from 'preact';
 import {connect} from 'preact-redux';
 
 import {removeDimension, changeProperty, addDimension} from './rotor2D_AC.js';
-import Rotor2dControllerElement from './rotors2DElement.js';
+import Rotor2dControllerElement from './rotors2DElement.jsx';
 
 /**
  * present list of products
@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 	return {
 		rotor2DData: state.rotorsData[ownProps.label],
 		rotorLabel: ownProps.label.toUpperCase()
-	}
+	};
 };
 
 /**
@@ -45,4 +45,4 @@ const Rotor2D = connect(
 )(Rotor2dControllerElement);
 
 
-export default Rotor2D
+export default Rotor2D;

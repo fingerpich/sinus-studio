@@ -65,9 +65,9 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
-    "preact": "^4.8.0",
-    "preact-redux": "^1.0.1",
-    "redux": "^3.5.2",
+    "preact": "^8.4.2",
+    "preact-redux": "^1.2.0",
+    "redux": "^3.7.2",
     "three": "^0.84.0",
     "three-orbit-controls": "^82.1.0"
   },

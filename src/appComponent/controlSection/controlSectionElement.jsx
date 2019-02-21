@@ -1,6 +1,6 @@
 import {h} from 'preact';
 import Rotor2D from './rotors2D/rotors2D.js';
-import Stepper from './rotors2D/rotor/stepper/stepper.js';
+import Stepper from './rotors2D/rotor/stepper/stepper.jsx';
 import './controlSection.less';
 
 /**
@@ -13,6 +13,7 @@ const ControlsSectionElement = ({options, onOptionChange, shareButtonClicked, on
 			<Rotor2D label="yz"/>
 			<Rotor2D label="xz"/>
 		</div>
+
 		<div>
 			<div className={'drawingControl '+(options.showMoreControl?'':'hide')}>
 				<div>

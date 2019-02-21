@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import Rotor from './rotor/rotor.js'
+import Rotor from './rotor/rotor.jsx';
 
 /**
  * present all dimension controllers
@@ -16,7 +16,7 @@ const Rotor2dControllerElement = ({onAddDimension, onChange, onRemove, rotor2DDa
 				<small>width</small>
 			</div>) : ''}
 		<ul>
-			{rotor2DData.map((dimension, index)=>
+			{rotor2DData.map((dimension, index) =>
 				<li key={index}>
 					<Rotor
 						{...dimension}

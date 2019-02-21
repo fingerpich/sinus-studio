@@ -1,7 +1,7 @@
 import {h, Component} from 'preact';
 import {connect} from 'preact-redux';
 import getStore from '../../initRedux.js';
-import ControlsSectionElement from './controlSectionElement';
+import ControlsSectionElement from './controlSectionElement.jsx';
 
 /**
  * get options from global state
@@ -35,9 +35,9 @@ const mapDispatchToProps = (dispatch, ownProps ) => {
 		onOptionChange: (name, value) => {
 			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
 		},
-		onProgressedStepsChange: (name,value,steps) => {
-			if (value>steps)value = 0;
-			if (value<0)value = steps;
+		onProgressedStepsChange: (name, value, steps) => {
+			if (value>steps) { value = 0;}
+			else if (value<0) { value = steps; }
 			dispatch({type: 'CHANGE_OPTIONS', data: {name, value}});
 		},
 		onSwitchPlayDrawing: (isPlaying) => {
