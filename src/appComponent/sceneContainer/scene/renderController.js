@@ -147,6 +147,7 @@ class RenderControllerClass {
 		if (this.stateHasChanged) {
 			this.curState = newState;
 		}
+		this.repeatRendering();
 	}
 
 	/**
@@ -176,7 +177,7 @@ class RenderControllerClass {
 				this.cameraHasChanged = false;
 			}
 		}
-		setTimeout( () => {this.repeatRendering();}, 5);
+		// setTimeout( () => {this.repeatRendering();}, 5);
 	}
 }
 

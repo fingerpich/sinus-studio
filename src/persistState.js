@@ -143,8 +143,7 @@ export const setUrlByState = () => {
 	window.location.search = encodeURL(state);
 };
 export const getUrlByState = () => {
-	const state = getStore()
-		.getState();
+	const state = getStore().getState();
 	let output = window.location.href.split('?')[0];
 	output += "?"+encodeURL(state);
 	// return window.location.href.split('?')[0] + encodeURL(state);

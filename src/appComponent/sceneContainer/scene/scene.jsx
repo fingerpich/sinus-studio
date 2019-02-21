@@ -1,5 +1,6 @@
 import {h, Component} from 'preact';
 import {RenderController} from  './renderController.js';
+import {renderSubject} from '../../../initRedux.js';
 /**
  * @extends {Component}
  * illustrate data
@@ -26,15 +27,10 @@ class Scene extends Component {
 	 * and start initializing scene and listening to store changes
 	 */
 	componentDidMount() {
-		const {store} = this.context;
-		this.unsubscribe = store.subscribe(() => {
-			RenderController.onStateChange(store.getState());
+		this.setup();
+		renderSubject.subscribe((state) => {
+			RenderController.onStateChange(state);
 		});
-
-		setTimeout(() => {
-			this.setup();
-			RenderController.onStateChange(store.getState());
-		}, 1);
 	}
 
 	/**

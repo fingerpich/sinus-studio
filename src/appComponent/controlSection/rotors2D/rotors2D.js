@@ -1,7 +1,7 @@
 import {h, Component} from 'preact';
 import {connect} from 'preact-redux';
 
-import {removeDimension, changeProperty, addDimension} from './rotor2D_AC.js';
+import {removeDimension, changeProperty, addDimension} from './rotor2D-Actions.js';
 import Rotor2dControllerElement from './rotors2DElement.jsx';
 
 /**

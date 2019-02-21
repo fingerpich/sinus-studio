@@ -1,6 +1,6 @@
 import {h} from 'preact';
 
-import ControlsSectionContainer from './controlSection/controlSection.js';
+import ControlsSectionContainer from './controlSection/controlSection.jsx';
 import SceneContainer from './sceneContainer/sceneContainer.jsx';
 /**
  * show all element

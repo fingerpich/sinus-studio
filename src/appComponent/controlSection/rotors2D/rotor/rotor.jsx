@@ -1,6 +1,7 @@
 import {Component, h} from 'preact';
 import "./rotor.less";
 import Stepper from './stepper/stepper.jsx';
+import timer from '../../../syncUpdates.js';
 
 /**
  * Rotor Element
@@ -8,11 +9,14 @@ import Stepper from './stepper/stepper.jsx';
  */
 class Rotor extends Component {
 	componentDidMount() {
-		// timer.subscribe(() => {
+		// this.subscription = timer.subscribe(() => {
 		// 	if (this.props.isPlaying) {
 		// 		this.props.onChange({name: 'start', value: this.props.start + 1});
 		// 	}
 		// });
+	}
+	componentWillUnmount() {
+		this.subscription.unsubscribe();
 	}
 
 	render () {
