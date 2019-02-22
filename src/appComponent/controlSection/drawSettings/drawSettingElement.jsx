@@ -10,7 +10,7 @@ const DrawSettingElement = ({options, onOptionChange, shareButtonClicked, onSwit
 		<div className={'drawingControl '+(options.showMoreControl?'':'hide')}>
 			<div>
 				<div>steps</div>
-				<Stepper name="steps" value={options.steps} onChange={(value) => onOptionChange({name:'steps', value})}/>
+				<Stepper name="steps" value={options.steps} onChange={(value) => onOptionChange('steps', value)}/>
 			</div>
 			<div class="lengthSetter">
 				<div>length</div>

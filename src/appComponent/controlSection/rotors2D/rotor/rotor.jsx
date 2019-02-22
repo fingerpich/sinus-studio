@@ -1,24 +1,12 @@
 import {Component, h} from 'preact';
 import "./rotor.less";
 import Stepper from './stepper/stepper.jsx';
-import timer from '../../../syncUpdates.js';
 
 /**
  * Rotor Element
  * @return {object} presentation element
  */
 class Rotor extends Component {
-	componentDidMount() {
-		// this.subscription = timer.subscribe(() => {
-		// 	if (this.props.isPlaying) {
-		// 		this.props.onChange({name: 'start', value: this.props.start + 1});
-		// 	}
-		// });
-	}
-	componentWillUnmount() {
-		this.subscription.unsubscribe();
-	}
-
 	render () {
 		return <div className="dimensionInputs">
 			<button className="removeBtn" onClick={this.props.onRemove}>&times;</button>
