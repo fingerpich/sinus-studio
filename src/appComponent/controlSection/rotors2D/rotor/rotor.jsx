@@ -1,7 +1,7 @@
 import {Component, h} from 'preact';
 import "./rotor.less";
 import Stepper from './stepper/stepper.jsx';
-
+import PlayButton from './playButton/PlayButton.jsx';
 /**
  * Rotor Element
  * @return {object} presentation element
@@ -15,11 +15,7 @@ class Rotor extends Component {
 			<Stepper name="step" value={this.props.step} onChange={(value) => this.props.onChange({name: 'step', value})}/>
 			<Stepper name="start" value={this.props.start} onChange={(value) => this.props.onChange({name: 'start', value})}/>
 
-			<button className="playBtn" onClick={() => this.props.onChange({name: 'isPlaying', value: !this.props.isPlaying})}>
-				<div className={'playpause ' + (this.props.isPlaying ? 'pause' : 'play')}>
-					<span className="left"></span><span className="right"></span>
-				</div>
-			</button>
+			<PlayButton isPlaying={this.props.isPlaying} onChange={(value) => this.props.onChange({name: 'isPlaying', value})}/>
 		</div>;
 	}
 }

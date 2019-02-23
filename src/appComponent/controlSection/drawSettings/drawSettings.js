@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch, ownProps ) => {
 			dispatch({type: CHANGE_OPTIONS, data: {name: 'progressedSteps', value}});
 		},
 		onSwitchPlayDrawing: (isPlaying) => {
-			dispatch({type: CHANGE_OPTIONS, data: {name: 'isPlayDrawing', value: !isPlaying}});
+			dispatch({type: CHANGE_OPTIONS, data: {name: 'isPlayDrawing', value: isPlaying}});
 		},
 		onResetDrawing: (steps) => {
 			dispatch({type: CHANGE_OPTIONS, data: {name: 'progressedSteps', value: steps}});

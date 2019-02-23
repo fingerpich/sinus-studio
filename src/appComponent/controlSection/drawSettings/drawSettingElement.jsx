@@ -1,5 +1,6 @@
 import {h} from 'preact';
 import Stepper from '../rotors2D/rotor/stepper/stepper.jsx';
+import PlayButton from '../rotors2D/rotor/playButton/PlayButton.jsx';
 import './drawSetting.less';
 
 /**
@@ -17,14 +18,8 @@ const DrawSettingElement = ({options, onOptionChange, shareButtonClicked, onSwit
 				<Stepper name="progressedSteps" value={options.progressedSteps} onChange={(value) => onProgressedStepsChange(value, options.steps)}/>
 			</div>
 			<div class="controlLength">
-				<button class="resetBtn" onClick={() => onResetDrawing(options.steps)}>
-					#
-				</button>
-				<button class="playBtn" onClick={() => onSwitchPlayDrawing(options.isPlayDrawing)}>
-					<div className={'playpause ' + (options.isPlayDrawing ? 'pause' : 'play')}>
-						<span class="left"></span><span class="right"></span>
-					</div>
-				</button>
+				<button class="resetBtn" onClick={() => onResetDrawing(options.steps)}>#</button>
+				<PlayButton isPlaying={options.isPlayDrawing} onChange={onSwitchPlayDrawing}/>
 			</div>
 		</div>
 		<input checked={options.showAxes} type="checkbox" onChange={(e) => {
