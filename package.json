@@ -8,7 +8,8 @@
     "start": "npm run dev",
     "build": "cross-env NODE_ENV=production webpack -p --progress --profile --colors",
     "testlint": "eslint src tests/**/*.js",
-    "test": "mocha --compilers js:babel-register --recursive ./**/*.desc.js"
+    "test": "mocha --compilers js:babel-register --recursive ./**/*.desc.js",
+    "pushDemo": "npm run build;git add .;git commit -a;git subtree push --prefix build origin gh-pages"
   },
   "repository": {
     "type": "git",
