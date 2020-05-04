@@ -33,6 +33,8 @@ Click on them
 [<img src="./examples/circles.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE1750V186V10V0ZVE2820V188V6V0ZVE90V182V10V0ZZVEZVEZZVE0V0V1V270V5001V1ZZ)
 [<img src="./examples/star5.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE6425V26V9V0ZVE0V31V8V1ZZVEZVEZZVE0V0V1V20V20V0ZZ)
 [<img src="./examples/3d-rotor.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE5482V19V8V0ZVE0V19V8V1ZZVEE0V16V6V1ZVE4872V19V6V0ZZVEE0V16V5V1ZVE4555V19V6V0ZZZVE0V0V0V3601V3601V0ZZ)
+[<img src="./examples/star born.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE5441V171V16V0ZVE0V168V3V1ZVE0V91V13V1ZZVEZVEZZVE0V0V1V320V320V0ZZ)
+[<img src="./examples/lsd.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE4910V177V10V0ZZVEE0V90V10V1ZZVEE0V89V10V1ZZZVE0V1V1V5000V5000V0ZZ)
 
 ## Introduction
 
