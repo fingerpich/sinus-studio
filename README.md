@@ -3,7 +3,7 @@
 Draws and animates a 3d spirograph-like curves using webGL.
 
 ## Examples
-Click on them
+Click on the following examples so you would see lines animations and if you changed the parameters you would have another animation.
 
 [<img src="./examples/twisting star.png"        width="100">](https://fingerpich.github.io/sinus-studio/?EEEE0V3V8V1ZVE1V28V8V0ZZVEZVEZZVE0V0V1V20V20V0ZZ)
 [<img src="./examples/bubbles spin.png"         width="100">](https://fingerpich.github.io/sinus-studio/?EEEE0V20V2V1ZVE791V6V10V1ZVE249V1V10V0ZZVEZVEZZVE0V0V1V360V360V0ZZ)
