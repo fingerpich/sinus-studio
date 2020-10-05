@@ -35,6 +35,7 @@ Click on the following examples so you would see lines animations and if you cha
 [<img src="./examples/3d-rotor.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE5482V19V8V0ZVE0V19V8V1ZZVEE0V16V6V1ZVE4872V19V6V0ZZVEE0V16V5V1ZVE4555V19V6V0ZZZVE0V0V0V3601V3601V0ZZ)
 [<img src="./examples/star born.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE5441V171V16V0ZVE0V168V3V1ZVE0V91V13V1ZZVEZVEZZVE0V0V1V320V320V0ZZ)
 [<img src="./examples/lsd.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE4910V177V10V0ZZVEE0V90V10V1ZZVEE0V89V10V1ZZZVE0V1V1V5000V5000V0ZZ)[<img src="./examples/colored-spider.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE5298V177V10V0ZZVEE0V178V10V1ZZVEE0V148V10V1ZZZVE0V1V1V419V5000V1ZZ)
+[<img src="./examples/colored-rope.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE0V15V7V1ZVE0V61V2V1ZZVEE2120V135V10V0ZVE0V45V10V1ZZVEE0V45V10V1ZVE90V90V10V0ZVE90V75V10V0ZZZVE0V1V1V3600V3600V0ZZ)
 
 ## Introduction
 
