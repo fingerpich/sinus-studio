@@ -36,7 +36,7 @@ Click on the following examples so you would see lines animations and if you cha
 [<img src="./examples/star born.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE5441V171V16V0ZVE0V168V3V1ZVE0V91V13V1ZZVEZVEZZVE0V0V1V320V320V0ZZ)
 [<img src="./examples/lsd.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE4910V177V10V0ZZVEE0V90V10V1ZZVEE0V89V10V1ZZZVE0V1V1V5000V5000V0ZZ)[<img src="./examples/colored-spider.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE5298V177V10V0ZZVEE0V178V10V1ZZVEE0V148V10V1ZZZVE0V1V1V419V5000V1ZZ)
 [<img src="./examples/colored-rope.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE0V15V7V1ZVE0V61V2V1ZZVEE2120V135V10V0ZVE0V45V10V1ZZVEE0V45V10V1ZVE90V90V10V0ZVE90V75V10V0ZZZVE0V1V1V3600V3600V0ZZ)
-
+[<img src="./examples/bipolar.png"   width="100">](https://fingerpich.github.io/sinus-studio/?EEEE5992V79V18V0ZVE0V198V3V1ZVE0V118V13V1ZZVEZVEZZVE0V0V1V3200V3200V0ZZ)
 ## Introduction
 
 A [Hypotrochoid](http://mathworld.wolfram.com/Hypotrochoid.html) is a 
